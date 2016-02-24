@@ -23,6 +23,15 @@ class ProgressViewController : UIViewController {
         }
     }
     
+    // by Q
+    internal var str: String = "" {
+        didSet {
+            progressAtRatioView?.str = str
+            progressAtRatioView?.setNeedsDisplay()
+        }
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

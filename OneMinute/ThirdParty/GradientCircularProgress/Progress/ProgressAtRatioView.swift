@@ -12,12 +12,19 @@ import UIKit
 class ProgressAtRatioView : UIView {
     
     private var mask: ArcView?
-    internal var prop: Property?
+@IBInspectable    internal var prop: Property?
     internal var ratioLabel: UILabel = UILabel()
     
-    internal var ratio: CGFloat = 0.0 {
+    internal var ratio: CGFloat = 0.0 //{  by Q
+//        didSet {
+//            ratioLabel.text = String(format:"%.0f", ratio * 100) + "%"
+//        }
+//    }
+    
+    // begin by Q
+    internal var str: String = "" {
         didSet {
-            ratioLabel.text = String(format:"%.0f", ratio * 100) + "%"
+            ratioLabel.text = str
         }
     }
     
@@ -105,11 +112,29 @@ class ProgressAtRatioView : UIView {
         // Progress Ratio
         ratioLabel.text = "          "
         ratioLabel.font = prop.ratioLabelFont
-        ratioLabel.textAlignment = NSTextAlignment.Right
+        ratioLabel.textAlignment = NSTextAlignment.Center
         ratioLabel.textColor = prop.ratioLabelFontColor
         ratioLabel.sizeToFit()
         ratioLabel.center = self.center
         
         self.addSubview(ratioLabel)
     }
+    
+//    func showString() {
+//        guard let prop = prop else {
+//            return
+//        }
+//        
+//        // Progress Ratio
+//        ratioLabel.text = ""
+//        ratioLabel.font = prop.ratioLabelFont
+//        ratioLabel.textAlignment = NSTextAlignment.Center
+//        ratioLabel.font.fontWithSize(40.0)
+//        ratioLabel.textColor = prop.ratioLabelFontColor
+//        ratioLabel.sizeToFit()
+//        ratioLabel.center = self.center
+//        
+//        self.addSubview(ratioLabel)
+//
+//    }
 }

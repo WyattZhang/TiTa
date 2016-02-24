@@ -14,10 +14,17 @@ class ViewController: UIViewController {
     var timer: NSTimer?
     var v: Double = 0.0
     var available: Bool = true
+    
+    var counter = 600
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let fonts = UIFont.familyNames()
+        print(fonts)
+        let font = UIFont.fontNamesForFamilyName("Courier")
+        print(font)
         
         self.progress.showAtRatio(display: true, style: BlueDarkStyle())
         self.startProgressAtRatio()
@@ -34,7 +41,7 @@ extension ViewController {
     func startProgressAtRatio() {
         self.v = 0.0
         self.timer = NSTimer.scheduledTimerWithTimeInterval(
-            0.01,
+            0.1,
             target: self,
             selector: "updateProgressAtRatio",
             userInfo: nil,
@@ -44,15 +51,19 @@ extension ViewController {
     }
     
     func updateProgressAtRatio() {
-        self.v += 0.001
+        counter--
+        self.v = self.v + 1/600
         
         self.progress.updateRatio(CGFloat(v))
         
+        self.progress.updateString("\(Int(counter/10) + 1)")
+        
         if self.v > 1.00 {
             self.timer!.invalidate()
-            self.progress.dismiss() { Void in
+//            self.progress.dismiss() { Void in
                 self.available = true
-            }
+            self.progress.updateString("0")
+//            }
             return
         }
     }

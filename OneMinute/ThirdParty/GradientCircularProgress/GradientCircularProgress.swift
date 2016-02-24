@@ -78,7 +78,17 @@ public class GradientCircularProgress {
         
         vc.ratio = ratio
     }
+    
+    
+    // by Q
+    public func updateString(str: String) {
+        guard let vc = progressViewController else {
+            return
+        }
         
+        vc.str = str
+    }
+    
     public func dismiss() -> Void {
         if available {
            return
