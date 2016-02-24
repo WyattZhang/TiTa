@@ -78,7 +78,7 @@ public class GradientCircularProgress {
         
         vc.ratio = ratio
     }
-    
+        
     public func dismiss() -> Void {
         if available {
            return

@@ -6,6 +6,7 @@
 //  Copyright (c) 2015年 keygx. All rights reserved.
 //
 
+import UIKit
 
 public struct GreenLightStyle : StyleProperty {
     // Progress Size
