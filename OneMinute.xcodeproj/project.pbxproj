@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1018A5F31C7E979B006F6AB0 /* OneMinuteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1018A5F21C7E979B006F6AB0 /* OneMinuteViewController.swift */; };
+		1018A5F51C800D03006F6AB0 /* GradientCircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1018A5F41C800D03006F6AB0 /* GradientCircularProgressView.swift */; };
 		108F7F501C7D9BED00738C81 /* GradientCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108F7F3D1C7D9BED00738C81 /* GradientCircularProgress.swift */; };
 		108F7F511C7D9BED00738C81 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 108F7F3E1C7D9BED00738C81 /* Info.plist */; };
 		108F7F521C7D9BED00738C81 /* ArcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108F7F401C7D9BED00738C81 /* ArcView.swift */; };
@@ -24,11 +26,11 @@
 		108F7F5E1C7D9BED00738C81 /* GreenLightStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108F7F4D1C7D9BED00738C81 /* GreenLightStyle.swift */; };
 		108F7F5F1C7D9BED00738C81 /* OrangeClearStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108F7F4E1C7D9BED00738C81 /* OrangeClearStyle.swift */; };
 		108F7F601C7D9BED00738C81 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108F7F4F1C7D9BED00738C81 /* Style.swift */; };
+		10B5D0901C8034E000122044 /* KYCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B5D08F1C8034E000122044 /* KYCircularProgress.swift */; };
 		10F082C21C5D83A2006C9BD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F082C11C5D83A2006C9BD1 /* AppDelegate.swift */; };
 		10F082C41C5D83A2006C9BD1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F082C31C5D83A2006C9BD1 /* ViewController.swift */; };
 		10F082C71C5D83A2006C9BD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10F082C51C5D83A2006C9BD1 /* Main.storyboard */; };
 		10F082CA1C5D83A2006C9BD1 /* OneMinute.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 10F082C81C5D83A2006C9BD1 /* OneMinute.xcdatamodeld */; };
-		10F082CC1C5D83A2006C9BD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10F082CB1C5D83A2006C9BD1 /* Assets.xcassets */; };
 		10F082CF1C5D83A2006C9BD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10F082CD1C5D83A2006C9BD1 /* LaunchScreen.storyboard */; };
 		10F082DA1C5D83A2006C9BD1 /* OneMinuteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F082D91C5D83A2006C9BD1 /* OneMinuteTests.swift */; };
 		10F082E51C5D83A2006C9BD1 /* OneMinuteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F082E41C5D83A2006C9BD1 /* OneMinuteUITests.swift */; };
@@ -52,6 +54,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1018A5F21C7E979B006F6AB0 /* OneMinuteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneMinuteViewController.swift; sourceTree = "<group>"; };
+		1018A5F41C800D03006F6AB0 /* GradientCircularProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientCircularProgressView.swift; sourceTree = "<group>"; };
 		108F7F3C1C7D9BED00738C81 /* GradientCircularProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientCircularProgress.h; sourceTree = "<group>"; };
 		108F7F3D1C7D9BED00738C81 /* GradientCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientCircularProgress.swift; sourceTree = "<group>"; };
 		108F7F3E1C7D9BED00738C81 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -70,12 +74,12 @@
 		108F7F4D1C7D9BED00738C81 /* GreenLightStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenLightStyle.swift; sourceTree = "<group>"; };
 		108F7F4E1C7D9BED00738C81 /* OrangeClearStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrangeClearStyle.swift; sourceTree = "<group>"; };
 		108F7F4F1C7D9BED00738C81 /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		10B5D08F1C8034E000122044 /* KYCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYCircularProgress.swift; sourceTree = "<group>"; };
 		10F082BE1C5D83A2006C9BD1 /* OneMinute.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneMinute.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10F082C11C5D83A2006C9BD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10F082C31C5D83A2006C9BD1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		10F082C61C5D83A2006C9BD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		10F082C91C5D83A2006C9BD1 /* OneMinute.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OneMinute.xcdatamodel; sourceTree = "<group>"; };
-		10F082CB1C5D83A2006C9BD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10F082CE1C5D83A2006C9BD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		10F082D01C5D83A2006C9BD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10F082D51C5D83A2006C9BD1 /* OneMinuteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OneMinuteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +115,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1018A5EF1C7E9770006F6AB0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1018A5F01C7E9770006F6AB0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1018A5F21C7E979B006F6AB0 /* OneMinuteViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1018A5F11C7E9770006F6AB0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1018A5F41C800D03006F6AB0 /* GradientCircularProgressView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		108F7F3B1C7D9BED00738C81 /* GradientCircularProgress */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,10 +203,12 @@
 			isa = PBXGroup;
 			children = (
 				10F082F21C5D8449006C9BD1 /* ThirdParty */,
+				1018A5EF1C7E9770006F6AB0 /* Models */,
+				1018A5F01C7E9770006F6AB0 /* Controllers */,
+				1018A5F11C7E9770006F6AB0 /* Views */,
 				10F082C11C5D83A2006C9BD1 /* AppDelegate.swift */,
 				10F082C31C5D83A2006C9BD1 /* ViewController.swift */,
 				10F082C51C5D83A2006C9BD1 /* Main.storyboard */,
-				10F082CB1C5D83A2006C9BD1 /* Assets.xcassets */,
 				10F082CD1C5D83A2006C9BD1 /* LaunchScreen.storyboard */,
 				10F082D01C5D83A2006C9BD1 /* Info.plist */,
 				10F082C81C5D83A2006C9BD1 /* OneMinute.xcdatamodeld */,
@@ -208,6 +237,7 @@
 		10F082F21C5D8449006C9BD1 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				10B5D08F1C8034E000122044 /* KYCircularProgress.swift */,
 				108F7F3B1C7D9BED00738C81 /* GradientCircularProgress */,
 			);
 			path = ThirdParty;
@@ -322,7 +352,6 @@
 			files = (
 				108F7F511C7D9BED00738C81 /* Info.plist in Resources */,
 				10F082CF1C5D83A2006C9BD1 /* LaunchScreen.storyboard in Resources */,
-				10F082CC1C5D83A2006C9BD1 /* Assets.xcassets in Resources */,
 				10F082C71C5D83A2006C9BD1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,9 +386,11 @@
 				108F7F5F1C7D9BED00738C81 /* OrangeClearStyle.swift in Sources */,
 				108F7F5A1C7D9BED00738C81 /* ProgressViewController.swift in Sources */,
 				108F7F521C7D9BED00738C81 /* ArcView.swift in Sources */,
+				10B5D0901C8034E000122044 /* KYCircularProgress.swift in Sources */,
 				108F7F551C7D9BED00738C81 /* CircularProgressView.swift in Sources */,
 				108F7F541C7D9BED00738C81 /* BaseWindow.swift in Sources */,
 				108F7F5D1C7D9BED00738C81 /* BlueIndicatorStyle.swift in Sources */,
+				1018A5F51C800D03006F6AB0 /* GradientCircularProgressView.swift in Sources */,
 				108F7F571C7D9BED00738C81 /* GradientArcView.swift in Sources */,
 				108F7F5C1C7D9BED00738C81 /* BlueDarkStyle.swift in Sources */,
 				108F7F501C7D9BED00738C81 /* GradientCircularProgress.swift in Sources */,
@@ -367,6 +398,7 @@
 				10F082C41C5D83A2006C9BD1 /* ViewController.swift in Sources */,
 				10F082C21C5D83A2006C9BD1 /* AppDelegate.swift in Sources */,
 				108F7F531C7D9BED00738C81 /* Background.swift in Sources */,
+				1018A5F31C7E979B006F6AB0 /* OneMinuteViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

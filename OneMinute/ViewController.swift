@@ -21,11 +21,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let fonts = UIFont.familyNames()
-        print(fonts)
-        let font = UIFont.fontNamesForFamilyName("Courier")
-        print(font)
-        
         self.progress.showAtRatio(display: true, style: BlueDarkStyle())
         self.startProgressAtRatio()
     }
@@ -60,6 +55,7 @@ extension ViewController {
         
         if self.v > 1.00 {
             self.timer!.invalidate()
+            timer = nil
 //            self.progress.dismiss() { Void in
                 self.available = true
             self.progress.updateString("0")

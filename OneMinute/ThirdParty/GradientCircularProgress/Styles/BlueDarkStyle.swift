@@ -22,8 +22,8 @@ public struct BlueDarkStyle : StyleProperty {
     public var baseArcColor: UIColor? = UIColor(red:0.0, green: 0.0, blue: 0.0, alpha: 0.2)
     
     // Ratio
-    public var ratioLabelFont: UIFont? = UIFont(name: "Courier", size: 100.0)
-//    public var ratioLabelFont: UIFont? = UIFont.systemFontOfSize(100, weight: UIFontWeightUltraLight)
+//    public var ratioLabelFont: UIFont? = UIFont(name: "Courier", size: 100.0)
+    public var ratioLabelFont: UIFont? = UIFont.systemFontOfSize(100, weight: UIFontWeightUltraLight)
     public var ratioLabelFontColor: UIColor? = UIColor.whiteColor()
     
     // Message

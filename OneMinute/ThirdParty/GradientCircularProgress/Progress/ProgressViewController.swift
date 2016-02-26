@@ -46,22 +46,22 @@ class ProgressViewController : UIViewController {
         return false
     }
     
-    override func prefersStatusBarHidden() -> Bool {
-        
-        let orientation:UIInterfaceOrientation = UIApplication.sharedApplication().statusBarOrientation
-        
-        switch orientation {
-        case .LandscapeLeft:
-            fallthrough
-        case .LandscapeRight:
-            // LandscapeLeft | LandscapeRight
-            return true
-        default:
-            // Unknown | Portrait | PortraitUpsideDown
-            return false
-        }
-    }
-    
+//    override func prefersStatusBarHidden() -> Bool {
+//        
+//        let orientation:UIInterfaceOrientation = UIApplication.sharedApplication().statusBarOrientation
+//        
+//        switch orientation {
+//        case .LandscapeLeft:
+//            fallthrough
+//        case .LandscapeRight:
+//            // LandscapeLeft | LandscapeRight
+//            return true
+//        default:
+//            // Unknown | Portrait | PortraitUpsideDown
+//            return false
+//        }
+//    }
+//    
     private func getViewRect() {
         
         let window = UIWindow(frame: UIScreen.mainScreen().bounds)
