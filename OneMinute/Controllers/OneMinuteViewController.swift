@@ -10,70 +10,69 @@ import UIKit
 
 class OneMinuteViewController: UIViewController {
     
+    private var timer: NSTimer?
+    private var progress: UInt = 0
+    private var counter = 60
+    private var fourColorCircularProgress: KYCircularProgress!
+    private var potoCircularProgress: KYCircularProgress!
     
-    @IBOutlet weak var circularProgressView = GradientCircularProgressView()
-//    let progress = GradientCircularProgress()
-    var timer: NSTimer?
-    var v: Double = 0.0
-    var available: Bool = true
-    var counter = 60
-    
-    private var viewRect: CGRect?
-    private var blurView: UIVisualEffectView?
-//    private var progressAtRatioView: ProgressAtRatioView?
-//    private var circularProgressView: CircularProgressView?
-    internal var prop: Property?
+    @IBOutlet weak var countDownCircularProgress: KYCircularProgress!
+    @IBOutlet weak var timeLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.view.backgroundColor = UIColor.clearColor()
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
-    }
-
     
-    @IBAction func startOneMinute(sender: UIButton) {
-        self.circularProgressView!.progress.showAtRatio(display: true, style: BlueDarkStyle())
-        self.startProgressAtRatio()
-    }
+    func drawPoto() {
+        let potoCircularProgressFrame = CGRectMake(fourColorCircularProgress.frame.origin.x+10.0,fourColorCircularProgress.frame.origin.y+10.0, CGRectGetWidth(fourColorCircularProgress.frame)-20.0, CGRectGetHeight(fourColorCircularProgress.frame)-20.0)
+        potoCircularProgress = KYCircularProgress(frame: potoCircularProgressFrame)
+        
+//        fourColorCircularProgress.colors = [UIColor(rgba: 0xA6E39D11), UIColor(rgba: 0xAEC1E355), UIColor(rgba: 0xAEC1E3AA), UIColor(rgba: 0xF3C0ABFF)]
+        potoCircularProgress.colors = [UIColor.purpleColor(), UIColor(rgba: 0xFFF77A55), UIColor.orangeColor()]
+        potoCircularProgress.progress = 1
+        view.addSubview(potoCircularProgress)
 
-    func startProgressAtRatio() {
-        self.v = 0.0
-        self.timer = NSTimer.scheduledTimerWithTimeInterval(
-            0.1,
-            target: self,
-            selector: "updateProgressAtRatio",
-            userInfo: nil,
-            repeats: true
-        )
-        NSRunLoop.mainRunLoop().addTimer(self.timer!, forMode: NSRunLoopCommonModes)
     }
-
-    func updateProgressAtRatio() {
-        counter--
-        self.v = self.v + 1/60
+    
+    func drawImus() {
+        let fourColorCircularProgressFrame = CGRectMake(countDownCircularProgress.frame.origin.x+10.0,countDownCircularProgress.frame.origin.y+10.0, CGRectGetWidth(countDownCircularProgress.frame)-20.0, CGRectGetHeight(countDownCircularProgress.frame)-20.0)
+        fourColorCircularProgress = KYCircularProgress(frame: fourColorCircularProgressFrame)
         
-        self.circularProgressView?.progress.updateRatio(CGFloat(v))
-        
-        self.circularProgressView?.progress.updateString("\(Int(counter/10) + 1)")
-        
-        if self.v > 1.00 {
-            self.timer!.invalidate()
+        fourColorCircularProgress.colors = [UIColor(rgba: 0xA6E39D11), UIColor(rgba: 0xAEC1E355), UIColor(rgba: 0xAEC1E3AA), UIColor(rgba: 0xF3C0ABFF)]
+        fourColorCircularProgress.progress = 1
+        view.addSubview(fourColorCircularProgress)
+    }
+    
+    func update() {
+        if counter >= 0 {
+            counter--
+            updateProgress()
+            updateTime()
+        } else {
+            timer!.invalidate()
             timer = nil
-//            self.progress.dismiss() {
-//                Void in
-            self.available = true
-            self.circularProgressView?.progress.updateString("0")
-            self.counter = 60
-//            }
-            return
+            timeLabel.removeFromSuperview()
+            counter = 60
+            drawImus()
+            drawPoto()
         }
+    }
+    
+    func updateProgress() {
+        countDownCircularProgress.progress = (1.0 - Double(counter) / 600)
+    }
+    
+    func updateTime() {
+        timeLabel.text = "\(Int(counter / 10))"
     }
 
 }

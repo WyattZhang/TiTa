@@ -17,32 +17,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AiU-VZ-NcP">
-                                <rect key="frame" x="231" y="422" width="139" height="49"/>
-                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="50"/>
-                                <state key="normal" title="Start"/>
-                                <connections>
-                                    <action selector="startOneMinute:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UI9-zX-zbg"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NE1-Sg-Mda" customClass="GradientCircularProgressView" customModule="OneMinute" customModuleProvider="target">
-                                <rect key="frame" x="170" y="56" width="260" height="260"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u9e-BB-OcK" customClass="KYCircularProgress" customModule="OneMinute" customModuleProvider="target">
+                                <rect key="frame" x="125" y="120" width="350" height="350"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPU-sZ-Vwb">
+                                        <rect key="frame" x="75" y="75" width="200" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="Qbu-zR-DFc"/>
+                                            <constraint firstAttribute="width" constant="200" id="WyS-3Z-mCe"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="170"/>
+                                        <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="6eh-WA-Ro9"/>
+                                    <constraint firstAttribute="height" constant="350" id="EJy-MJ-W2I"/>
+                                    <constraint firstItem="rPU-sZ-Vwb" firstAttribute="centerX" secondItem="u9e-BB-OcK" secondAttribute="centerX" id="GXl-m3-6Jc"/>
+                                    <constraint firstItem="rPU-sZ-Vwb" firstAttribute="centerY" secondItem="u9e-BB-OcK" secondAttribute="centerY" id="v2J-KF-mzV"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showProgressGuide" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="progressGuideColor">
+                                        <color key="value" red="0.090196078430000007" green="0.68235294120000001" blue="0.7843137255" alpha="0.14999999999999999" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVF-wD-1R8">
+                                <rect key="frame" x="140" y="503" width="321" height="47"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="30"/>
+                                <state key="normal" title="Start One Minute">
+                                    <color key="titleColor" red="0.2156862745" green="0.50196078430000002" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="0.2156862745" green="0.73763786763333339" blue="0.98690597766296284" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="AiU-VZ-NcP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oBs-yk-LA3"/>
-                            <constraint firstItem="NE1-Sg-Mda" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zmf-CU-Zb7"/>
+                            <constraint firstItem="MVF-wD-1R8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DTa-8a-BD9"/>
+                            <constraint firstItem="u9e-BB-OcK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QZs-Pg-yzt"/>
+                            <constraint firstItem="u9e-BB-OcK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="Sq2-ta-k8k"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MVF-wD-1R8" secondAttribute="bottom" constant="140" id="jnC-Qv-kEJ"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="circularProgressView" destination="8bC-Xf-vdC" id="r2X-Zg-9IA"/>
+                        <outlet property="countDownCircularProgress" destination="u9e-BB-OcK" id="CVd-ut-HNd"/>
+                        <outlet property="timeLabel" destination="rPU-sZ-Vwb" id="M24-LZ-HKg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="323" y="308"/>
+            <point key="canvasLocation" x="22" y="241"/>
         </scene>
     </scenes>
 </document>

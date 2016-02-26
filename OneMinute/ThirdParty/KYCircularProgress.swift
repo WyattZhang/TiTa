@@ -165,10 +165,6 @@ public class KYCircularProgress: UIView {
         configureProgressLayer()
         configureProgressGuideLayer(showProgressGuide)
     }
-
-//    required public init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
     
     /**
     This closure is called when set value to `progress` property.
@@ -234,8 +230,8 @@ public class KYCircularProgress: UIView {
 
 // MARK: - KYCircularShapeView
 class KYCircularShapeView: UIView {
-    var startAngle = 0.0
-    var endAngle = 0.0
+    var startAngle = M_PI * 3 / 2
+    var endAngle = M_PI * 3 / 2
     
     override class func layerClass() -> AnyClass {
         return CAShapeLayer.self
@@ -254,9 +250,6 @@ class KYCircularShapeView: UIView {
         updateProgress(0)
     }
 
-//    required init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
     
     override func layoutSubviews() {
         super.layoutSubviews()
