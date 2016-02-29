@@ -235,6 +235,11 @@
 					10F082BD1C5D83A2006C9BD1 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = W8Z5PW2FDD;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					10F082D41C5D83A2006C9BD1 = {
 						CreatedOnToolsVersion = 7.2;

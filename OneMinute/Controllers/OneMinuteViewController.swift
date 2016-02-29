@@ -17,7 +17,6 @@ class OneMinuteViewController: UIViewController {
     private var immersionCP: KYCircularProgress!
     private var pomodoroCP: KYCircularProgress!
     private var starBadgeCP: KYCircularProgress!
-//    private var ti: NSTimeInterval = NSTimeInterval()
     private var startTime: NSTimeInterval!
     private var isRunning: Bool = false
     
@@ -36,7 +35,6 @@ class OneMinuteViewController: UIViewController {
         oneMinuteBtn.layer.borderWidth = 0.5
         oneMinuteBtn.layer.cornerRadius = 5
         oneMinuteBtn.layer.borderColor = UIColor.grayColor().CGColor
-
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -62,24 +60,64 @@ class OneMinuteViewController: UIViewController {
 //        let rightBar = UIBarButtonItem(barButtonSystemItem: .Camera, target: self, action: "")
 //        self.navigationItem.rightBarButtonItem = rightBar
     }
+//    
+//    func update() {
+//        counter--
+//        switch counter {
+//        case 1440 ... 1500:
+//            updateOneMinuteCP()
+//            updateStarBadgeCP()
+//        case 1439:
+//            UIApplication.sharedApplication().idleTimerDisabled = false
+//            timeLabel.font = UIFont(name: "HelveticaNeue-UltraLight", size: 60)
+//            oneMinuteBtn.hidden = false
+//            oneMinuteBtn.setTitleColor(UIColor.redColor(), forState: .Normal)
+//            oneMinuteBtn.setTitle("Finish", forState: .Normal)
+//            updateImmersionCP()
+//        case 600 ... 1438:
+//            updateImmersionCP()
+//        case 0...599:
+//            updataPomodoroCP()
+//        default:
+//            timeLabel.font = UIFont(name: "HelveticaNeue-UltraLight", size: 35)
+//            timer!.invalidate()
+//            timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector:"updateTimeLabelWithHours", userInfo: nil, repeats: true)
+//            NSRunLoop.mainRunLoop().addTimer(timer!, forMode: NSRunLoopCommonModes)
+//        }
+//    }
     
     func update() {
-        counter--
-        switch counter {
-        case 1440 ... 1500:
+        let elapsedTime = UInt(NSDate.timeIntervalSinceReferenceDate() - startTime)
+        switch elapsedTime {
+        case 0 ... 60:
             updateOneMinuteCP()
             updateStarBadgeCP()
-        case 600 ... 1439:
-            updateImmersionCP()
+        case 1439:
+            UIApplication.sharedApplication().idleTimerDisabled = false
+            timeLabel.font = UIFont(name: "HelveticaNeue-UltraLight", size: 60)
             oneMinuteBtn.hidden = false
             oneMinuteBtn.setTitleColor(UIColor.redColor(), forState: .Normal)
-            oneMinuteBtn.setTitle("Stop", forState: .Normal)
+            oneMinuteBtn.setTitle("Finish", forState: .Normal)
+            updateImmersionCP()
+        case 600 ... 1438:
+            updateImmersionCP()
         case 0...599:
             updataPomodoroCP()
         default:
+            timeLabel.font = UIFont(name: "HelveticaNeue-UltraLight", size: 35)
             timer!.invalidate()
-            timer = nil
+            timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector:"updateTimeLabelWithHours", userInfo: nil, repeats: true)
+            NSRunLoop.mainRunLoop().addTimer(timer!, forMode: NSRunLoopCommonModes)
         }
+    }
+    
+    func updateTimeLabelWithHours() {
+        let ti: NSTimeInterval = NSDate.timeIntervalSinceReferenceDate() + NSTimeInterval(1500) - startTime
+        let hours = Int((ti / 60) / 60)
+        let minutes = Int((ti - NSTimeInterval(hours) * 60) / 60)
+        let seconds = Int((ti - NSTimeInterval(hours) * 60 - NSTimeInterval(minutes) * 60))
+        timeLabel.text = String(format: "%02i : %02i : %02i", hours, minutes, seconds)
+//        print(ti, hours, minutes, seconds)
     }
     
     func updateOneMinuteCP() {
@@ -88,7 +126,6 @@ class OneMinuteViewController: UIViewController {
     }
     
     func updateImmersionCP() {
-        timeLabel.font = UIFont(name: "HelveticaNeue-UltraLight", size: 60)
         timeLabel.text = String(format: "%02i : %02i", Int(counter / 60 - 10), Int(counter % 60))
         immersionCP.progress = (1.0 - Double(counter - 600) / 900.0)
     }
@@ -110,9 +147,10 @@ extension OneMinuteViewController {
     @IBAction func oneMinuteClicked(sender: AnyObject) {
         
         if !isRunning {
-            startTime = NSTimeInterval()
-            timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector:"update", userInfo: nil, repeats: true)
+            startTime = NSDate.timeIntervalSinceReferenceDate()
+            timer = NSTimer.scheduledTimerWithTimeInterval(0.001, target: self, selector:"update", userInfo: nil, repeats: true)
             NSRunLoop.mainRunLoop().addTimer(timer!, forMode: NSRunLoopCommonModes)
+            navigationItem.rightBarButtonItem = nil
             goalLabel.hidden = false
             oneMinuteBtn.hidden = true
             self.isRunning = true
@@ -120,7 +158,7 @@ extension OneMinuteViewController {
             timer!.invalidate()
             timer = nil
             self.isRunning = false
-            oneMinuteBtn.setTitle("ReStart", forState: .Normal)
+            oneMinuteBtn.setTitle("Dismiss", forState: .Normal)
         }
     }
         
@@ -133,7 +171,7 @@ extension OneMinuteViewController {
     func configurePomodoroCP() {
         let pomodoroCPFrame = CGRectMake(oneMinuteCP.frame.origin.x + 20.0,oneMinuteCP.frame.origin.y + 20.0, oneMinuteCP.bounds.width - 40.0, oneMinuteCP.bounds.height - 40.0)
         pomodoroCP = KYCircularProgress(frame: pomodoroCPFrame)
-        pomodoroCP.colors = [UIColor.redColor(), UIColor(rgba: 0xFFF77A55), UIColor.grayColor()]
+        pomodoroCP.colors = [UIColor(rgba: 0xDE342EAA), UIColor(rgba: 0xFFF77A55), UIColor.grayColor()]
 
         view.addSubview(pomodoroCP)
         
@@ -154,10 +192,9 @@ extension OneMinuteViewController {
     func configureStarBadge() {
         
         starBadgeCP = KYCircularProgress(frame: starBadge.bounds)
-        print(starBadgeCP.frame)
-//        starBadgeCP.colors = [UIColor.yellowColor(), UIColor(rgba: 0xFFF77A55), UIColor.orangeColor()]
-        starBadgeCP.colors = [UIColor.yellowColor()]
-        starBadgeCP.lineWidth = 1.0
+        starBadgeCP.colors = [UIColor.yellowColor(), UIColor.orangeColor()]
+//        starBadgeCP.colors = [UIColor.yellowColor()]
+        starBadgeCP.lineWidth = 0.5
         
         starBadgeCP.path = starPathInRect(starBadge.bounds)
         starBadge.addSubview(starBadgeCP)
