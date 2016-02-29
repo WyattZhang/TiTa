@@ -6,6 +6,8 @@
 //  Copyright © 2016年 zwq. All rights reserved.
 //
 
+// uncouple the MVC later on
+
 import UIKit
 
 class OneMinuteViewController: UIViewController {
@@ -15,7 +17,8 @@ class OneMinuteViewController: UIViewController {
     private var immersionCP: KYCircularProgress!
     private var pomodoroCP: KYCircularProgress!
     private var starBadgeCP: KYCircularProgress!
-    private var ti: NSTimeInterval = NSTimeInterval()
+//    private var ti: NSTimeInterval = NSTimeInterval()
+    private var startTime: NSTimeInterval!
     private var isRunning: Bool = false
     
     @IBOutlet weak var starBadge: UIView!
@@ -27,6 +30,7 @@ class OneMinuteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        UIApplication.sharedApplication().idleTimerDisabled = true
         configureNavigationController()
         goalLabel.hidden = true
         oneMinuteBtn.layer.borderWidth = 0.5
@@ -42,11 +46,6 @@ class OneMinuteViewController: UIViewController {
         configureStarBadge()
         }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        let right = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "")
-        self.navigationController!.navigationItem.rightBarButtonItem = right
-        }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
@@ -111,7 +110,8 @@ extension OneMinuteViewController {
     @IBAction func oneMinuteClicked(sender: AnyObject) {
         
         if !isRunning {
-            timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector:"update", userInfo: nil, repeats: true)
+            startTime = NSTimeInterval()
+            timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector:"update", userInfo: nil, repeats: true)
             NSRunLoop.mainRunLoop().addTimer(timer!, forMode: NSRunLoopCommonModes)
             goalLabel.hidden = false
             oneMinuteBtn.hidden = true
@@ -143,7 +143,9 @@ extension OneMinuteViewController {
         
         let immersionCPFrame = CGRectMake(oneMinuteCP.frame.origin.x + 10.0,oneMinuteCP.frame.origin.y + 10.0, oneMinuteCP.bounds.width - 20.0, oneMinuteCP.bounds.height - 20.0)
         immersionCP = KYCircularProgress(frame: immersionCPFrame)
-        immersionCP.colors = [UIColor(rgba: 0xA6E39DAA), UIColor(rgba: 0xAEC1E3AA), UIColor(rgba: 0xAEC1E3AA), UIColor(rgba: 0xF3C0ABAA)]
+//        immersionCP.colors = [UIColor(rgba: 0xA6E39DAA), UIColor(rgba: 0xAEC1E3AA), UIColor(rgba: 0xAEC1E3AA), UIColor(rgba: 0xF3C0ABAA)]
+        immersionCP.colors = [UIColor(rgba: 0x53C7A0AA), UIColor(rgba: 0x3891E6AA)]
+
         
         view.addSubview(immersionCP)
         
@@ -153,7 +155,8 @@ extension OneMinuteViewController {
         
         starBadgeCP = KYCircularProgress(frame: starBadge.bounds)
         print(starBadgeCP.frame)
-        starBadgeCP.colors = [UIColor.purpleColor(), UIColor(rgba: 0xFFF77A55), UIColor.orangeColor()]
+//        starBadgeCP.colors = [UIColor.yellowColor(), UIColor(rgba: 0xFFF77A55), UIColor.orangeColor()]
+        starBadgeCP.colors = [UIColor.yellowColor()]
         starBadgeCP.lineWidth = 1.0
         
         starBadgeCP.path = starPathInRect(starBadge.bounds)
