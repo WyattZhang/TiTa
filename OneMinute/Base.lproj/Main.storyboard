@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Aj8-uQ-20F">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u9e-BB-OcK" customClass="KYCircularProgress" customModule="OneMinute" customModuleProvider="target">
-                                <rect key="frame" x="125" y="120" width="350" height="350"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u9e-BB-OcK" customClass="KYCircularProgress" customModule="OneMinute" customModuleProvider="target">
+                                <rect key="frame" x="125" y="144" width="350" height="350"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPU-sZ-Vwb">
                                         <rect key="frame" x="75" y="75" width="200" height="200"/>
@@ -48,7 +48,11 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVF-wD-1R8">
-                                <rect key="frame" x="140" y="503" width="321" height="47"/>
+                                <rect key="frame" x="150" y="520" width="300" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="Udl-f1-4ag"/>
+                                    <constraint firstAttribute="height" constant="50" id="rPz-gO-sTN"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="30"/>
                                 <state key="normal" title="Start One Minute">
                                     <color key="titleColor" red="0.2156862745" green="0.50196078430000002" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -56,22 +60,89 @@
                                 <state key="highlighted">
                                     <color key="titleColor" red="0.2156862745" green="0.73763786763333339" blue="0.98690597766296284" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="oneMinuteClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vEu-l6-cDd"/>
+                                </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pvy-Gk-pOW">
+                                <rect key="frame" x="185" y="114" width="230" height="20"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One Minute Goal of Today" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4vE-3B-cBL">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="1LE-25-Y4Q"/>
+                                            <constraint firstAttribute="height" constant="20" id="2kf-gE-3EN"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="19"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kUl-L5-Lol">
+                                        <rect key="frame" x="210" y="0.0" width="20" height="20"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="DSS-x5-kS9"/>
+                                            <constraint firstAttribute="width" constant="20" id="beJ-yk-qXY"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="kUl-L5-Lol" secondAttribute="trailing" id="0jO-oJ-CrC"/>
+                                    <constraint firstAttribute="width" constant="230" id="90d-ZO-1e2"/>
+                                    <constraint firstAttribute="bottom" secondItem="4vE-3B-cBL" secondAttribute="bottom" id="CPa-cj-WIg"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="HLc-UF-OI7"/>
+                                    <constraint firstAttribute="bottom" secondItem="kUl-L5-Lol" secondAttribute="bottom" id="IGS-AC-kaD"/>
+                                    <constraint firstItem="4vE-3B-cBL" firstAttribute="leading" secondItem="Pvy-Gk-pOW" secondAttribute="leading" id="P4s-Xy-Mdg"/>
+                                    <constraint firstItem="kUl-L5-Lol" firstAttribute="leading" secondItem="4vE-3B-cBL" secondAttribute="trailing" constant="10" id="Uef-El-uoO"/>
+                                    <constraint firstAttribute="height" constant="20" id="aGd-uY-cLV"/>
+                                    <constraint firstItem="kUl-L5-Lol" firstAttribute="top" secondItem="Pvy-Gk-pOW" secondAttribute="top" id="o7h-Gx-fo4"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="oVc-Uy-ET1"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="MVF-wD-1R8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DTa-8a-BD9"/>
                             <constraint firstItem="u9e-BB-OcK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QZs-Pg-yzt"/>
-                            <constraint firstItem="u9e-BB-OcK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="Sq2-ta-k8k"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MVF-wD-1R8" secondAttribute="bottom" constant="140" id="jnC-Qv-kEJ"/>
+                            <constraint firstItem="u9e-BB-OcK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="130" id="Sq2-ta-k8k"/>
+                            <constraint firstItem="Pvy-Gk-pOW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="aj2-oq-2rO"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MVF-wD-1R8" secondAttribute="bottom" constant="70" id="jnC-Qv-kEJ"/>
+                            <constraint firstItem="Pvy-Gk-pOW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kYX-cU-bNQ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="HZ5-sN-Z2y">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="stop" id="1Mc-xP-5TD">
+                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="countDownCircularProgress" destination="u9e-BB-OcK" id="CVd-ut-HNd"/>
+                        <outlet property="goalLabel" destination="4vE-3B-cBL" id="uqL-Aa-xbC"/>
+                        <outlet property="oneMinuteBtn" destination="MVF-wD-1R8" id="3Hq-r2-VJS"/>
+                        <outlet property="oneMinuteCP" destination="u9e-BB-OcK" id="g9b-mH-sMu"/>
+                        <outlet property="starBadge" destination="kUl-L5-Lol" id="faw-I9-bDu"/>
                         <outlet property="timeLabel" destination="rPU-sZ-Vwb" id="M24-LZ-HKg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="834" y="241"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Gac-mI-sDY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Aj8-uQ-20F" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0BN-Nr-Qef">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="w89-Ag-2D1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kpk-h6-9QY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="22" y="241"/>
         </scene>
