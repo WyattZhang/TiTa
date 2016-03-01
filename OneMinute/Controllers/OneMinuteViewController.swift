@@ -13,7 +13,7 @@ import UIKit
 class OneMinuteViewController: UIViewController {
     
     private var timer: NSTimer?
-    private var counter = 1500
+    private var counter = 0.0
     private var immersionCP: KYCircularProgress!
     private var pomodoroCP: KYCircularProgress!
     private var starBadgeCP: KYCircularProgress!
@@ -60,84 +60,71 @@ class OneMinuteViewController: UIViewController {
 //        let rightBar = UIBarButtonItem(barButtonSystemItem: .Camera, target: self, action: "")
 //        self.navigationItem.rightBarButtonItem = rightBar
     }
-//    
-//    func update() {
-//        counter--
-//        switch counter {
-//        case 1440 ... 1500:
-//            updateOneMinuteCP()
-//            updateStarBadgeCP()
-//        case 1439:
-//            UIApplication.sharedApplication().idleTimerDisabled = false
-//            timeLabel.font = UIFont(name: "HelveticaNeue-UltraLight", size: 60)
-//            oneMinuteBtn.hidden = false
-//            oneMinuteBtn.setTitleColor(UIColor.redColor(), forState: .Normal)
-//            oneMinuteBtn.setTitle("Finish", forState: .Normal)
-//            updateImmersionCP()
-//        case 600 ... 1438:
-//            updateImmersionCP()
-//        case 0...599:
-//            updataPomodoroCP()
-//        default:
-//            timeLabel.font = UIFont(name: "HelveticaNeue-UltraLight", size: 35)
-//            timer!.invalidate()
-//            timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector:"updateTimeLabelWithHours", userInfo: nil, repeats: true)
-//            NSRunLoop.mainRunLoop().addTimer(timer!, forMode: NSRunLoopCommonModes)
-//        }
-//    }
     
     func update() {
+        
         let elapsedTime = UInt(NSDate.timeIntervalSinceReferenceDate() - startTime)
         switch elapsedTime {
-        case 0 ... 60:
-            updateOneMinuteCP()
-            updateStarBadgeCP()
-        case 1439:
+        case 0 ... 59:
+            counter++
+            updateOneMinuteCP(elapsedTime)
+            updateStarBadgeCP(elapsedTime)
+        case 60:
+            counter++
+            updateOneMinuteCP(elapsedTime)
+            updateStarBadgeCP(elapsedTime)
+            timer!.invalidate()
+            timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector:"update", userInfo: nil, repeats: true)
+            NSRunLoop.mainRunLoop().addTimer(timer!, forMode: NSRunLoopCommonModes)
+            print(60)
+            print(elapsedTime)
+        case 61:
             UIApplication.sharedApplication().idleTimerDisabled = false
             timeLabel.font = UIFont(name: "HelveticaNeue-UltraLight", size: 60)
             oneMinuteBtn.hidden = false
             oneMinuteBtn.setTitleColor(UIColor.redColor(), forState: .Normal)
             oneMinuteBtn.setTitle("Finish", forState: .Normal)
-            updateImmersionCP()
-        case 600 ... 1438:
-            updateImmersionCP()
-        case 0...599:
-            updataPomodoroCP()
+            updateImmersionCP(elapsedTime)
+            print(61)
+            print(elapsedTime)
+            print(timeLabel.text)
+        case 62 ... 900:
+            updateImmersionCP(elapsedTime)
+        case 901...1500:
+            updataPomodoroCP(elapsedTime)
         default:
             timeLabel.font = UIFont(name: "HelveticaNeue-UltraLight", size: 35)
-            timer!.invalidate()
-            timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector:"updateTimeLabelWithHours", userInfo: nil, repeats: true)
-            NSRunLoop.mainRunLoop().addTimer(timer!, forMode: NSRunLoopCommonModes)
         }
     }
     
+    func updateOneMinuteCP(elapsedTime: UInt) {
+        timeLabel.text = "\(60 - elapsedTime)"
+        oneMinuteCP.progress = (counter / 600.0)
+    }
+    
+    func updateStarBadgeCP(elapsedTime: UInt) {
+        starBadgeCP.progress = (counter / 600.0)
+    }
+    
+    func updateImmersionCP(elapsedTime: UInt) {
+        timeLabel.text = String(format: "%02i : %02i", UInt(14 - (elapsedTime / 60)), UInt(60 - (elapsedTime % 60)))
+        immersionCP.progress = (Double(elapsedTime) / 900.0)
+    }
+    
+    func updataPomodoroCP(elapsedTime: UInt) {
+        timeLabel.text = String(format: "%02i : %02i", UInt(25 - (elapsedTime / 60)), Int(60 - (elapsedTime % 60)))
+        pomodoroCP.progress = (Double(elapsedTime) / 1500.0)
+    }
+    
     func updateTimeLabelWithHours() {
-        let ti: NSTimeInterval = NSDate.timeIntervalSinceReferenceDate() + NSTimeInterval(1500) - startTime
-        let hours = Int((ti / 60) / 60)
-        let minutes = Int((ti - NSTimeInterval(hours) * 60) / 60)
-        let seconds = Int((ti - NSTimeInterval(hours) * 60 - NSTimeInterval(minutes) * 60))
-        timeLabel.text = String(format: "%02i : %02i : %02i", hours, minutes, seconds)
-//        print(ti, hours, minutes, seconds)
+        let ti: NSTimeInterval = NSDate.timeIntervalSinceReferenceDate() - startTime
+        let hours = UInt((ti / 60.0) / 60.0)
+        let minutes = UInt((ti - NSTimeInterval(hours) * 60 * 60) / 60)
+        let seconds = UInt((ti - NSTimeInterval(hours) * 60 * 60 - NSTimeInterval(minutes) * 60))
+        timeLabel.text = String(format: "%i : %02i : %02i", hours, minutes, seconds)
+        //        print(ti, hours, minutes, seconds)
     }
-    
-    func updateOneMinuteCP() {
-        timeLabel.text = "\(counter - 1440)"
-        oneMinuteCP.progress = (1.0 - Double(counter - 1440) / 60.0)
-    }
-    
-    func updateImmersionCP() {
-        timeLabel.text = String(format: "%02i : %02i", Int(counter / 60 - 10), Int(counter % 60))
-        immersionCP.progress = (1.0 - Double(counter - 600) / 900.0)
-    }
-    
-    func updataPomodoroCP() {
-        timeLabel.text = String(format: "%02i : %02i", Int(counter / 60), Int(counter % 60))
-        pomodoroCP.progress = (1.0 - Double(counter) / 1500.0)
-    }
-    
-    func updateStarBadgeCP() {
-        starBadgeCP.progress = (1.0 - Double(counter - 1440) / 60.0)
-    }
+
 }
 
 
@@ -148,7 +135,7 @@ extension OneMinuteViewController {
         
         if !isRunning {
             startTime = NSDate.timeIntervalSinceReferenceDate()
-            timer = NSTimer.scheduledTimerWithTimeInterval(0.001, target: self, selector:"update", userInfo: nil, repeats: true)
+            timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector:"update", userInfo: nil, repeats: true)
             NSRunLoop.mainRunLoop().addTimer(timer!, forMode: NSRunLoopCommonModes)
             navigationItem.rightBarButtonItem = nil
             goalLabel.hidden = false
@@ -163,7 +150,6 @@ extension OneMinuteViewController {
     }
         
 }
-
 
 // MARK: Move to OneMinuteView and uncouple later
 extension OneMinuteViewController {
@@ -193,7 +179,6 @@ extension OneMinuteViewController {
         
         starBadgeCP = KYCircularProgress(frame: starBadge.bounds)
         starBadgeCP.colors = [UIColor.yellowColor(), UIColor.orangeColor()]
-//        starBadgeCP.colors = [UIColor.yellowColor()]
         starBadgeCP.lineWidth = 0.5
         
         starBadgeCP.path = starPathInRect(starBadge.bounds)
