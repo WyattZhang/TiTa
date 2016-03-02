@@ -8,6 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		1018A5F31C7E979B006F6AB0 /* OneMinuteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1018A5F21C7E979B006F6AB0 /* OneMinuteViewController.swift */; };
+		103ADCDD1C85757200D5436D /* SevenYearsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103ADCDC1C85757200D5436D /* SevenYearsTableViewController.swift */; };
+		103ADCDF1C86511000D5436D /* SevenYearsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103ADCDE1C86511000D5436D /* SevenYearsTableViewCell.swift */; };
+		103ADCE11C86516E00D5436D /* SevenYears.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103ADCE01C86516E00D5436D /* SevenYears.swift */; };
+		103ADCF61C86527F00D5436D /* Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103ADCE31C86527F00D5436D /* Additions.swift */; };
+		103ADCF71C86527F00D5436D /* DateInRegion+Comparisons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103ADCE41C86527F00D5436D /* DateInRegion+Comparisons.swift */; };
+		103ADCF81C86527F00D5436D /* DateInRegion+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103ADCE51C86527F00D5436D /* DateInRegion+Components.swift */; };
+		103ADCF91C86527F00D5436D /* DateInRegion+Equations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103ADCE61C86527F00D5436D /* DateInRegion+Equations.swift */; };
+		103ADCFA1C86527F00D5436D /* DateInRegion+Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103ADCE71C86527F00D5436D /* DateInRegion+Formatter.swift */; };
+		103ADCFB1C86527F00D5436D /* DateInRegion+NSDatePort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103ADCE81C86527F00D5436D /* DateInRegion+NSDatePort.swift */; };
+		103ADCFC1C86527F00D5436D /* DateInRegion+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103ADCE91C86527F00D5436D /* DateInRegion+Operations.swift */; };
+		103ADCFD1C86527F00D5436D /* DateInRegion+StartEnd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103ADCEA1C86527F00D5436D /* DateInRegion+StartEnd.swift */; };
+		103ADCFE1C86527F00D5436D /* DateInRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103ADCEB1C86527F00D5436D /* DateInRegion.swift */; };
+		103ADCFF1C86527F00D5436D /* Dictionary+SwiftDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103ADCEC1C86527F00D5436D /* Dictionary+SwiftDate.swift */; };
+		103ADD001C86527F00D5436D /* NSCalendar+SwiftDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103ADCED1C86527F00D5436D /* NSCalendar+SwiftDate.swift */; };
+		103ADD011C86527F00D5436D /* NSDate+SwiftDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103ADCEE1C86527F00D5436D /* NSDate+SwiftDate.swift */; };
+		103ADD021C86527F00D5436D /* NSDateComponents+SwiftDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103ADCEF1C86527F00D5436D /* NSDateComponents+SwiftDate.swift */; };
+		103ADD031C86527F00D5436D /* NSDateFormatter+SwiftDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103ADCF01C86527F00D5436D /* NSDateFormatter+SwiftDate.swift */; };
+		103ADD041C86527F00D5436D /* NSDateInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103ADCF11C86527F00D5436D /* NSDateInterval.swift */; };
+		103ADD051C86527F00D5436D /* NSLocale+SwiftDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103ADCF21C86527F00D5436D /* NSLocale+SwiftDate.swift */; };
+		103ADD061C86527F00D5436D /* NSTimeInterval+SwiftDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103ADCF31C86527F00D5436D /* NSTimeInterval+SwiftDate.swift */; };
+		103ADD071C86527F00D5436D /* NSTimeZone+SwiftDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103ADCF41C86527F00D5436D /* NSTimeZone+SwiftDate.swift */; };
+		103ADD081C86527F00D5436D /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103ADCF51C86527F00D5436D /* Region.swift */; };
 		103DCEF91C82C41D00197818 /* OneMinuteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103DCEF81C82C41D00197818 /* OneMinuteButton.swift */; };
 		10B5D0901C8034E000122044 /* KYCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B5D08F1C8034E000122044 /* KYCircularProgress.swift */; };
 		10B5D0981C80FEBB00122044 /* OneMinuteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B5D0971C80FEBB00122044 /* OneMinuteView.swift */; };
@@ -38,6 +60,28 @@
 
 /* Begin PBXFileReference section */
 		1018A5F21C7E979B006F6AB0 /* OneMinuteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneMinuteViewController.swift; sourceTree = "<group>"; };
+		103ADCDC1C85757200D5436D /* SevenYearsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SevenYearsTableViewController.swift; sourceTree = "<group>"; };
+		103ADCDE1C86511000D5436D /* SevenYearsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SevenYearsTableViewCell.swift; sourceTree = "<group>"; };
+		103ADCE01C86516E00D5436D /* SevenYears.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SevenYears.swift; sourceTree = "<group>"; };
+		103ADCE31C86527F00D5436D /* Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Additions.swift; sourceTree = "<group>"; };
+		103ADCE41C86527F00D5436D /* DateInRegion+Comparisons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateInRegion+Comparisons.swift"; sourceTree = "<group>"; };
+		103ADCE51C86527F00D5436D /* DateInRegion+Components.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateInRegion+Components.swift"; sourceTree = "<group>"; };
+		103ADCE61C86527F00D5436D /* DateInRegion+Equations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateInRegion+Equations.swift"; sourceTree = "<group>"; };
+		103ADCE71C86527F00D5436D /* DateInRegion+Formatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateInRegion+Formatter.swift"; sourceTree = "<group>"; };
+		103ADCE81C86527F00D5436D /* DateInRegion+NSDatePort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateInRegion+NSDatePort.swift"; sourceTree = "<group>"; };
+		103ADCE91C86527F00D5436D /* DateInRegion+Operations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateInRegion+Operations.swift"; sourceTree = "<group>"; };
+		103ADCEA1C86527F00D5436D /* DateInRegion+StartEnd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateInRegion+StartEnd.swift"; sourceTree = "<group>"; };
+		103ADCEB1C86527F00D5436D /* DateInRegion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateInRegion.swift; sourceTree = "<group>"; };
+		103ADCEC1C86527F00D5436D /* Dictionary+SwiftDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+SwiftDate.swift"; sourceTree = "<group>"; };
+		103ADCED1C86527F00D5436D /* NSCalendar+SwiftDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSCalendar+SwiftDate.swift"; sourceTree = "<group>"; };
+		103ADCEE1C86527F00D5436D /* NSDate+SwiftDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+SwiftDate.swift"; sourceTree = "<group>"; };
+		103ADCEF1C86527F00D5436D /* NSDateComponents+SwiftDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDateComponents+SwiftDate.swift"; sourceTree = "<group>"; };
+		103ADCF01C86527F00D5436D /* NSDateFormatter+SwiftDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDateFormatter+SwiftDate.swift"; sourceTree = "<group>"; };
+		103ADCF11C86527F00D5436D /* NSDateInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateInterval.swift; sourceTree = "<group>"; };
+		103ADCF21C86527F00D5436D /* NSLocale+SwiftDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLocale+SwiftDate.swift"; sourceTree = "<group>"; };
+		103ADCF31C86527F00D5436D /* NSTimeInterval+SwiftDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTimeInterval+SwiftDate.swift"; sourceTree = "<group>"; };
+		103ADCF41C86527F00D5436D /* NSTimeZone+SwiftDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTimeZone+SwiftDate.swift"; sourceTree = "<group>"; };
+		103ADCF51C86527F00D5436D /* Region.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
 		103DCEF81C82C41D00197818 /* OneMinuteButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneMinuteButton.swift; sourceTree = "<group>"; };
 		10B5D08F1C8034E000122044 /* KYCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYCircularProgress.swift; sourceTree = "<group>"; };
 		10B5D0971C80FEBB00122044 /* OneMinuteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneMinuteView.swift; sourceTree = "<group>"; };
@@ -83,6 +127,7 @@
 		1018A5EF1C7E9770006F6AB0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				103ADCE01C86516E00D5436D /* SevenYears.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -91,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				1018A5F21C7E979B006F6AB0 /* OneMinuteViewController.swift */,
+				103ADCDC1C85757200D5436D /* SevenYearsTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -100,8 +146,35 @@
 			children = (
 				10B5D0971C80FEBB00122044 /* OneMinuteView.swift */,
 				103DCEF81C82C41D00197818 /* OneMinuteButton.swift */,
+				103ADCDE1C86511000D5436D /* SevenYearsTableViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		103ADCE21C86527F00D5436D /* SwiftDate */ = {
+			isa = PBXGroup;
+			children = (
+				103ADCE31C86527F00D5436D /* Additions.swift */,
+				103ADCE41C86527F00D5436D /* DateInRegion+Comparisons.swift */,
+				103ADCE51C86527F00D5436D /* DateInRegion+Components.swift */,
+				103ADCE61C86527F00D5436D /* DateInRegion+Equations.swift */,
+				103ADCE71C86527F00D5436D /* DateInRegion+Formatter.swift */,
+				103ADCE81C86527F00D5436D /* DateInRegion+NSDatePort.swift */,
+				103ADCE91C86527F00D5436D /* DateInRegion+Operations.swift */,
+				103ADCEA1C86527F00D5436D /* DateInRegion+StartEnd.swift */,
+				103ADCEB1C86527F00D5436D /* DateInRegion.swift */,
+				103ADCEC1C86527F00D5436D /* Dictionary+SwiftDate.swift */,
+				103ADCED1C86527F00D5436D /* NSCalendar+SwiftDate.swift */,
+				103ADCEE1C86527F00D5436D /* NSDate+SwiftDate.swift */,
+				103ADCEF1C86527F00D5436D /* NSDateComponents+SwiftDate.swift */,
+				103ADCF01C86527F00D5436D /* NSDateFormatter+SwiftDate.swift */,
+				103ADCF11C86527F00D5436D /* NSDateInterval.swift */,
+				103ADCF21C86527F00D5436D /* NSLocale+SwiftDate.swift */,
+				103ADCF31C86527F00D5436D /* NSTimeInterval+SwiftDate.swift */,
+				103ADCF41C86527F00D5436D /* NSTimeZone+SwiftDate.swift */,
+				103ADCF51C86527F00D5436D /* Region.swift */,
+			);
+			path = SwiftDate;
 			sourceTree = "<group>";
 		};
 		10F082B51C5D83A2006C9BD1 = {
@@ -161,6 +234,7 @@
 		10F082F21C5D8449006C9BD1 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				103ADCE21C86527F00D5436D /* SwiftDate */,
 				10B5D08F1C8034E000122044 /* KYCircularProgress.swift */,
 			);
 			path = ThirdParty;
@@ -304,12 +378,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				103ADD071C86527F00D5436D /* NSTimeZone+SwiftDate.swift in Sources */,
+				103ADCFC1C86527F00D5436D /* DateInRegion+Operations.swift in Sources */,
+				103ADCF71C86527F00D5436D /* DateInRegion+Comparisons.swift in Sources */,
+				103ADD001C86527F00D5436D /* NSCalendar+SwiftDate.swift in Sources */,
+				103ADCFD1C86527F00D5436D /* DateInRegion+StartEnd.swift in Sources */,
+				103ADCFB1C86527F00D5436D /* DateInRegion+NSDatePort.swift in Sources */,
+				103ADCFE1C86527F00D5436D /* DateInRegion.swift in Sources */,
+				103ADCDF1C86511000D5436D /* SevenYearsTableViewCell.swift in Sources */,
+				103ADCF61C86527F00D5436D /* Additions.swift in Sources */,
+				103ADCDD1C85757200D5436D /* SevenYearsTableViewController.swift in Sources */,
+				103ADCF91C86527F00D5436D /* DateInRegion+Equations.swift in Sources */,
+				103ADD081C86527F00D5436D /* Region.swift in Sources */,
+				103ADD021C86527F00D5436D /* NSDateComponents+SwiftDate.swift in Sources */,
+				103ADD041C86527F00D5436D /* NSDateInterval.swift in Sources */,
 				10F082CA1C5D83A2006C9BD1 /* OneMinute.xcdatamodeld in Sources */,
 				10B5D0901C8034E000122044 /* KYCircularProgress.swift in Sources */,
+				103ADCFA1C86527F00D5436D /* DateInRegion+Formatter.swift in Sources */,
+				103ADCF81C86527F00D5436D /* DateInRegion+Components.swift in Sources */,
+				103ADD061C86527F00D5436D /* NSTimeInterval+SwiftDate.swift in Sources */,
+				103ADCE11C86516E00D5436D /* SevenYears.swift in Sources */,
 				103DCEF91C82C41D00197818 /* OneMinuteButton.swift in Sources */,
+				103ADCFF1C86527F00D5436D /* Dictionary+SwiftDate.swift in Sources */,
 				10B5D0981C80FEBB00122044 /* OneMinuteView.swift in Sources */,
 				10F082C21C5D83A2006C9BD1 /* AppDelegate.swift in Sources */,
+				103ADD031C86527F00D5436D /* NSDateFormatter+SwiftDate.swift in Sources */,
+				103ADD051C86527F00D5436D /* NSLocale+SwiftDate.swift in Sources */,
 				1018A5F31C7E979B006F6AB0 /* OneMinuteViewController.swift in Sources */,
+				103ADD011C86527F00D5436D /* NSDate+SwiftDate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -146,5 +146,45 @@
             </objects>
             <point key="canvasLocation" x="22" y="241"/>
         </scene>
+        <!--Seven Years Table View Controller-->
+        <scene sceneID="12p-bl-kOq">
+            <objects>
+                <tableViewController id="EPl-GB-z1G" customClass="SevenYearsTableViewController" customModule="OneMinute" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="103" sectionHeaderHeight="28" sectionFooterHeight="28" id="D7e-3D-Dhg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" rowHeight="103" id="8xg-Eq-04S">
+                                <rect key="frame" x="0.0" y="28" width="600" height="103"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8xg-Eq-04S" id="plV-yA-JaG">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="102"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" progressViewStyle="bar" progress="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="lO5-xi-ogj">
+                                            <rect key="frame" x="18" y="82" width="572" height="3"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="10" id="MVX-9h-dBO"/>
+                                            </constraints>
+                                        </progressView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="lO5-xi-ogj" secondAttribute="trailing" constant="10" id="JvP-7s-bUr"/>
+                                        <constraint firstItem="lO5-xi-ogj" firstAttribute="leading" secondItem="plV-yA-JaG" secondAttribute="leading" constant="18" id="ahf-zC-C3v"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="EPl-GB-z1G" id="v3M-TK-Ict"/>
+                            <outlet property="delegate" destination="EPl-GB-z1G" id="VxW-QK-Lmv"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NuE-jV-CZL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-13" y="1140"/>
+        </scene>
     </scenes>
 </document>
