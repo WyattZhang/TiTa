@@ -31,24 +31,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
         
-        let navigationController = window!.rootViewController as! UINavigationController
-        let oneMinuteVC = navigationController.topViewController as! OneMinuteViewController
-        print(2)
-        guard let _ = oneMinuteVC.startTime else {return}
-        
-        let elapsedTime = UInt(NSDate.timeIntervalSinceReferenceDate() - oneMinuteVC.startTime)
-        
-        if elapsedTime > 0 && elapsedTime < 60 {
-            oneMinuteVC.timer!.invalidate()
-            oneMinuteVC.timer = nil
-            oneMinuteVC.counter = 0.0
-            oneMinuteVC.isRunning = false
-            oneMinuteVC.oneMinuteBtn.hidden = false
-            oneMinuteVC.timeLabel.text = "60"
-            oneMinuteVC.oneMinuteBtn.setTitle("Start Again", forState: .Normal)
-            oneMinuteVC.oneMinuteCP.progress = 0.0
-            oneMinuteVC.starBadgeCP.progress = 0.0
-        }
+//        let navigationController = window!.rootViewController as! UINavigationController
+//        let oneMinuteVC = navigationController.topViewController as! OneMinuteViewController
+//        print(2)
+//        guard let _ = oneMinuteVC.startTime else {return}
+//        
+//        let elapsedTime = UInt(NSDate.timeIntervalSinceReferenceDate() - oneMinuteVC.startTime)
+//        
+//        if elapsedTime > 0 && elapsedTime < 60 {
+//            oneMinuteVC.timer!.invalidate()
+//            oneMinuteVC.timer = nil
+//            oneMinuteVC.counter = 0.0
+//            oneMinuteVC.isRunning = false
+//            oneMinuteVC.oneMinuteBtn.hidden = false
+//            oneMinuteVC.timeLabel.text = "60"
+//            oneMinuteVC.oneMinuteBtn.setTitle("Start Again", forState: .Normal)
+//            oneMinuteVC.oneMinuteCP.progress = 0.0
+//            oneMinuteVC.starBadgeCP.progress = 0.0
+//        }
         
         
         print("applicationWillResignActive")
@@ -68,21 +68,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 
-        let navigationController = window!.rootViewController as! UINavigationController
-        let oneMinuteVC = navigationController.topViewController as! OneMinuteViewController
-        print(1)
-        guard let _ = oneMinuteVC.startTime else {return}
-        
-        let elapsedTime = UInt(NSDate.timeIntervalSinceReferenceDate() - oneMinuteVC.startTime)
-        
-        if elapsedTime >= 900 {
-            oneMinuteVC.immersionCP.progress = 1.0
-            
-            if elapsedTime >= 1500 {
-                oneMinuteVC.pomodoroCP.progress = 1.0
-                oneMinuteVC.timeLabel.font = UIFont(name: "HelveticaNeue-UltraLight", size: 35)
-            }
-        }
+//        let navigationController = window!.rootViewController as! UINavigationController
+//        let oneMinuteVC = navigationController.topViewController as! OneMinuteViewController
+//        print(1)
+//        guard let _ = oneMinuteVC.startTime else {return}
+//        
+//        let elapsedTime = UInt(NSDate.timeIntervalSinceReferenceDate() - oneMinuteVC.startTime)
+//        
+//        if elapsedTime >= 900 {
+//            oneMinuteVC.immersionCP.progress = 1.0
+//            
+//            if elapsedTime >= 1500 {
+//                oneMinuteVC.pomodoroCP.progress = 1.0
+//                oneMinuteVC.timeLabel.font = UIFont(name: "HelveticaNeue-UltraLight", size: 35)
+//            }
+//        }
 
         print("applicationDidBecomeActive")
 

@@ -10,13 +10,32 @@ import UIKit
 
 class SevenYears: NSObject {
 
-    let beginDayOfSevenYears: NSDate!
-    let endDayOfSevenYears: NSDate!
-    
-    override init() {
-        beginDayOfSevenYears = NSDate()
-        endDayOfSevenYears = NSDate()
-        super.init()
+    var beginDayOfSevenYears: NSDate = NSDate()
+    var endDayOfSevenYears: NSDate = NSDate()
+ 
+    func totalDays() -> Int {
+        let cal = NSCalendar.currentCalendar()
+        let unit: NSCalendarUnit = .Day
+        let components = cal.components(unit, fromDate: self.beginDayOfSevenYears, toDate: self.endDayOfSevenYears, options:[])
+        
+        return components.day
     }
     
+    func elapsedDays() -> Int {
+        let today = NSDate()
+        let cal = NSCalendar.currentCalendar()
+        let unit: NSCalendarUnit = .Day
+        let components = cal.components(unit, fromDate: self.beginDayOfSevenYears, toDate: today, options:[])
+        if components.day < 0  {
+            return 0
+        } else if components.day <= totalDays() {
+            return components.day
+        } else {
+            return totalDays()
+        }
+    }
+    
+    func remainDays() -> Int {
+        return self.totalDays() - self.elapsedDays()
+    }
 }

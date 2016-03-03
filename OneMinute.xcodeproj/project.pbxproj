@@ -33,6 +33,7 @@
 		103DCEF91C82C41D00197818 /* OneMinuteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103DCEF81C82C41D00197818 /* OneMinuteButton.swift */; };
 		10B5D0901C8034E000122044 /* KYCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B5D08F1C8034E000122044 /* KYCircularProgress.swift */; };
 		10B5D0981C80FEBB00122044 /* OneMinuteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B5D0971C80FEBB00122044 /* OneMinuteView.swift */; };
+		10CB79CA1C87F12400654FF3 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10CB79C91C87F12400654FF3 /* LocalAuthentication.framework */; };
 		10F082C21C5D83A2006C9BD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F082C11C5D83A2006C9BD1 /* AppDelegate.swift */; };
 		10F082C71C5D83A2006C9BD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10F082C51C5D83A2006C9BD1 /* Main.storyboard */; };
 		10F082CA1C5D83A2006C9BD1 /* OneMinute.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 10F082C81C5D83A2006C9BD1 /* OneMinute.xcdatamodeld */; };
@@ -85,6 +86,7 @@
 		103DCEF81C82C41D00197818 /* OneMinuteButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneMinuteButton.swift; sourceTree = "<group>"; };
 		10B5D08F1C8034E000122044 /* KYCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYCircularProgress.swift; sourceTree = "<group>"; };
 		10B5D0971C80FEBB00122044 /* OneMinuteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneMinuteView.swift; sourceTree = "<group>"; };
+		10CB79C91C87F12400654FF3 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		10F082BE1C5D83A2006C9BD1 /* OneMinute.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneMinute.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10F082C11C5D83A2006C9BD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10F082C61C5D83A2006C9BD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10CB79CA1C87F12400654FF3 /* LocalAuthentication.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +212,7 @@
 				10F082CD1C5D83A2006C9BD1 /* LaunchScreen.storyboard */,
 				10F082D01C5D83A2006C9BD1 /* Info.plist */,
 				10F082C81C5D83A2006C9BD1 /* OneMinute.xcdatamodeld */,
+				10CB79C91C87F12400654FF3 /* LocalAuthentication.framework */,
 			);
 			path = OneMinute;
 			sourceTree = "<group>";
@@ -544,7 +548,6 @@
 		10F082EA1C5D83A3006C9BD1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/OneMinute/ThirdParty",
@@ -560,7 +563,6 @@
 		10F082EB1C5D83A3006C9BD1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/OneMinute/ThirdParty",
