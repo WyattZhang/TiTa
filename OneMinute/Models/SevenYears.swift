@@ -12,6 +12,7 @@ class SevenYears: NSObject {
 
     var beginDayOfSevenYears: NSDate = NSDate()
     var endDayOfSevenYears: NSDate = NSDate()
+    var cellBackgroundColor: UIColor = UIColor.clearColor()
  
     func totalDays() -> Int {
         let cal = NSCalendar.currentCalendar()

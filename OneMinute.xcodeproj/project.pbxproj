@@ -34,6 +34,8 @@
 		10B5D0901C8034E000122044 /* KYCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B5D08F1C8034E000122044 /* KYCircularProgress.swift */; };
 		10B5D0981C80FEBB00122044 /* OneMinuteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B5D0971C80FEBB00122044 /* OneMinuteView.swift */; };
 		10CB79CA1C87F12400654FF3 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10CB79C91C87F12400654FF3 /* LocalAuthentication.framework */; };
+		10CB79CC1C882C5F00654FF3 /* PITouchIDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB79CB1C882C5F00654FF3 /* PITouchIDManager.swift */; };
+		10CB79CE1C88307800654FF3 /* TouchIDAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB79CD1C88307800654FF3 /* TouchIDAuthViewController.swift */; };
 		10F082C21C5D83A2006C9BD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F082C11C5D83A2006C9BD1 /* AppDelegate.swift */; };
 		10F082C71C5D83A2006C9BD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10F082C51C5D83A2006C9BD1 /* Main.storyboard */; };
 		10F082CA1C5D83A2006C9BD1 /* OneMinute.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 10F082C81C5D83A2006C9BD1 /* OneMinute.xcdatamodeld */; };
@@ -87,6 +89,8 @@
 		10B5D08F1C8034E000122044 /* KYCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYCircularProgress.swift; sourceTree = "<group>"; };
 		10B5D0971C80FEBB00122044 /* OneMinuteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneMinuteView.swift; sourceTree = "<group>"; };
 		10CB79C91C87F12400654FF3 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		10CB79CB1C882C5F00654FF3 /* PITouchIDManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PITouchIDManager.swift; sourceTree = "<group>"; };
+		10CB79CD1C88307800654FF3 /* TouchIDAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchIDAuthViewController.swift; sourceTree = "<group>"; };
 		10F082BE1C5D83A2006C9BD1 /* OneMinute.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneMinute.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10F082C11C5D83A2006C9BD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10F082C61C5D83A2006C9BD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -140,6 +144,7 @@
 			children = (
 				1018A5F21C7E979B006F6AB0 /* OneMinuteViewController.swift */,
 				103ADCDC1C85757200D5436D /* SevenYearsTableViewController.swift */,
+				10CB79CD1C88307800654FF3 /* TouchIDAuthViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -239,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				103ADCE21C86527F00D5436D /* SwiftDate */,
+				10CB79CB1C882C5F00654FF3 /* PITouchIDManager.swift */,
 				10B5D08F1C8034E000122044 /* KYCircularProgress.swift */,
 			);
 			path = ThirdParty;
@@ -404,8 +410,10 @@
 				103ADCE11C86516E00D5436D /* SevenYears.swift in Sources */,
 				103DCEF91C82C41D00197818 /* OneMinuteButton.swift in Sources */,
 				103ADCFF1C86527F00D5436D /* Dictionary+SwiftDate.swift in Sources */,
+				10CB79CC1C882C5F00654FF3 /* PITouchIDManager.swift in Sources */,
 				10B5D0981C80FEBB00122044 /* OneMinuteView.swift in Sources */,
 				10F082C21C5D83A2006C9BD1 /* AppDelegate.swift in Sources */,
+				10CB79CE1C88307800654FF3 /* TouchIDAuthViewController.swift in Sources */,
 				103ADD031C86527F00D5436D /* NSDateFormatter+SwiftDate.swift in Sources */,
 				103ADD051C86527F00D5436D /* NSLocale+SwiftDate.swift in Sources */,
 				1018A5F31C7E979B006F6AB0 /* OneMinuteViewController.swift in Sources */,

@@ -17,12 +17,16 @@ class SevenYearsTableViewCell: UITableViewCell {
     @IBOutlet weak var totalDaysLabel: UILabel!
     @IBOutlet weak var elapsedDaysLabel: UILabel!
     @IBOutlet weak var remainDaysLabel: UILabel!
+    @IBOutlet weak var ageLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         
-        configureProgressView()
+//        configureProgressView()
+        
+        
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -37,6 +41,10 @@ class SevenYearsTableViewCell: UITableViewCell {
         self.progressView.layer.borderColor = UIColor.blueColor().CGColor
         self.progressView.layer.borderWidth = 0.5
         self.progressView.clipsToBounds = true
+        
+    }
+    
+    func configurelifeLabel() {
         
     }
 
