@@ -306,10 +306,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J7I-QK-rZ2" customClass="FSCalendar">
-                                <rect key="frame" x="0.0" y="64" width="600" height="346"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="360"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="346" id="5Mz-0M-BmV"/>
+                                    <constraint firstAttribute="height" constant="360" id="5Mz-0M-BmV"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="dataSource" destination="MiB-09-r5R" id="BeG-zT-Ney"/>
@@ -317,7 +317,7 @@
                                 </connections>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bd7-Eu-bS1">
-                                <rect key="frame" x="0.0" y="410" width="600" height="190"/>
+                                <rect key="frame" x="0.0" y="424" width="600" height="176"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
