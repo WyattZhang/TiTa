@@ -32,10 +32,9 @@ class SevenYearsTableViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let authVC = storyBoard.instantiateViewControllerWithIdentifier("TouchIDAuthViewController") as! TouchIDAuthViewController
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        let authVC = self.storyboard!.instantiateViewControllerWithIdentifier("TouchIDAuthViewController") as! TouchIDAuthViewController
         let app = UIApplication.sharedApplication().delegate as! AppDelegate
         if !app.isAuthed {
             authVC.parentVC = self
@@ -108,8 +107,8 @@ extension SevenYearsTableViewController {
     
     func configureSevenYearsList() {
         
-        beginDate.birthYear = 1984
-        beginDate.year = 2002
+        beginDate.birthYear = 1987
+        beginDate.year = 2005
         beginDate.month = 07
         beginDate.day = 04
         beginDate.hour = 24
