@@ -60,6 +60,7 @@
 		10F981A01C8C32EF00ECF5AC /* NSString+FSExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F981901C8C32EF00ECF5AC /* NSString+FSExtension.m */; };
 		10F981A11C8C32EF00ECF5AC /* UIView+FSExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F981921C8C32EF00ECF5AC /* UIView+FSExtension.m */; };
 		10F981A31C8C3E3200ECF5AC /* CalendarTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F981A21C8C3E3200ECF5AC /* CalendarTableView.swift */; };
+		10FD329F1C9A4DAD00C89669 /* FSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FD329E1C9A4DAD00C89669 /* FSDate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +156,7 @@
 		10F981911C8C32EF00ECF5AC /* UIView+FSExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FSExtension.h"; sourceTree = "<group>"; };
 		10F981921C8C32EF00ECF5AC /* UIView+FSExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FSExtension.m"; sourceTree = "<group>"; };
 		10F981A21C8C3E3200ECF5AC /* CalendarTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTableView.swift; sourceTree = "<group>"; };
+		10FD329E1C9A4DAD00C89669 /* FSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSDate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 			children = (
 				103ADCE01C86516E00D5436D /* SevenYears.swift */,
 				108F22AF1C8D09E800129E43 /* OneMinute.swift */,
+				10FD329E1C9A4DAD00C89669 /* FSDate.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -513,6 +516,7 @@
 				103ADD061C86527F00D5436D /* NSTimeInterval+SwiftDate.swift in Sources */,
 				103ADCE11C86516E00D5436D /* SevenYears.swift in Sources */,
 				103DCEF91C82C41D00197818 /* OneMinuteButton.swift in Sources */,
+				10FD329F1C9A4DAD00C89669 /* FSDate.swift in Sources */,
 				10F9819C1C8C32EF00ECF5AC /* FSCalendarHeader.m in Sources */,
 				103ADCFF1C86527F00D5436D /* Dictionary+SwiftDate.swift in Sources */,
 				10F981941C8C32EF00ECF5AC /* FSCalendar+IBExtension.m in Sources */,
