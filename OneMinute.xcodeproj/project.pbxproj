@@ -34,6 +34,7 @@
 		108F22B01C8D09E800129E43 /* OneMinute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108F22AF1C8D09E800129E43 /* OneMinute.swift */; };
 		10B5D0901C8034E000122044 /* KYCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B5D08F1C8034E000122044 /* KYCircularProgress.swift */; };
 		10B5D0981C80FEBB00122044 /* OneMinuteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B5D0971C80FEBB00122044 /* OneMinuteView.swift */; };
+		10B63C0A1C9B668F0014BDAB /* FSDate+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B63C091C9B668F0014BDAB /* FSDate+CoreDataProperties.swift */; };
 		10CB79CA1C87F12400654FF3 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10CB79C91C87F12400654FF3 /* LocalAuthentication.framework */; };
 		10CB79CC1C882C5F00654FF3 /* PITouchIDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB79CB1C882C5F00654FF3 /* PITouchIDManager.swift */; };
 		10CB79CE1C88307800654FF3 /* TouchIDAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB79CD1C88307800654FF3 /* TouchIDAuthViewController.swift */; };
@@ -60,7 +61,11 @@
 		10F981A01C8C32EF00ECF5AC /* NSString+FSExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F981901C8C32EF00ECF5AC /* NSString+FSExtension.m */; };
 		10F981A11C8C32EF00ECF5AC /* UIView+FSExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F981921C8C32EF00ECF5AC /* UIView+FSExtension.m */; };
 		10F981A31C8C3E3200ECF5AC /* CalendarTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F981A21C8C3E3200ECF5AC /* CalendarTableView.swift */; };
-		10FD329F1C9A4DAD00C89669 /* FSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FD329E1C9A4DAD00C89669 /* FSDate.swift */; };
+		10FD32AA1C9AB63300C89669 /* MMDrawerBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FD32A21C9AB63300C89669 /* MMDrawerBarButtonItem.m */; };
+		10FD32AB1C9AB63300C89669 /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FD32A51C9AB63300C89669 /* MMDrawerController.m */; };
+		10FD32AC1C9AB63300C89669 /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FD32A71C9AB63300C89669 /* MMDrawerVisualState.m */; };
+		10FD32AD1C9AB63300C89669 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FD32A91C9AB63300C89669 /* UIViewController+MMDrawerController.m */; };
+		10FD32B91C9AC58500C89669 /* FSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FD32B71C9AC58500C89669 /* FSDate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +113,7 @@
 		108F22AF1C8D09E800129E43 /* OneMinute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneMinute.swift; sourceTree = "<group>"; };
 		10B5D08F1C8034E000122044 /* KYCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYCircularProgress.swift; sourceTree = "<group>"; };
 		10B5D0971C80FEBB00122044 /* OneMinuteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneMinuteView.swift; sourceTree = "<group>"; };
+		10B63C091C9B668F0014BDAB /* FSDate+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FSDate+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		10CB79C91C87F12400654FF3 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		10CB79CB1C882C5F00654FF3 /* PITouchIDManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PITouchIDManager.swift; sourceTree = "<group>"; };
 		10CB79CD1C88307800654FF3 /* TouchIDAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchIDAuthViewController.swift; sourceTree = "<group>"; };
@@ -156,7 +162,16 @@
 		10F981911C8C32EF00ECF5AC /* UIView+FSExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FSExtension.h"; sourceTree = "<group>"; };
 		10F981921C8C32EF00ECF5AC /* UIView+FSExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FSExtension.m"; sourceTree = "<group>"; };
 		10F981A21C8C3E3200ECF5AC /* CalendarTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTableView.swift; sourceTree = "<group>"; };
-		10FD329E1C9A4DAD00C89669 /* FSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSDate.swift; sourceTree = "<group>"; };
+		10FD32A11C9AB63300C89669 /* MMDrawerBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerBarButtonItem.h; sourceTree = "<group>"; };
+		10FD32A21C9AB63300C89669 /* MMDrawerBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerBarButtonItem.m; sourceTree = "<group>"; };
+		10FD32A31C9AB63300C89669 /* MMDrawerController+Subclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MMDrawerController+Subclass.h"; sourceTree = "<group>"; };
+		10FD32A41C9AB63300C89669 /* MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerController.h; sourceTree = "<group>"; };
+		10FD32A51C9AB63300C89669 /* MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerController.m; sourceTree = "<group>"; };
+		10FD32A61C9AB63300C89669 /* MMDrawerVisualState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerVisualState.h; sourceTree = "<group>"; };
+		10FD32A71C9AB63300C89669 /* MMDrawerVisualState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerVisualState.m; sourceTree = "<group>"; };
+		10FD32A81C9AB63300C89669 /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
+		10FD32A91C9AB63300C89669 /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
+		10FD32B71C9AC58500C89669 /* FSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSDate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,9 +203,10 @@
 		1018A5EF1C7E9770006F6AB0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				10B63C091C9B668F0014BDAB /* FSDate+CoreDataProperties.swift */,
+				10FD32B71C9AC58500C89669 /* FSDate.swift */,
 				103ADCE01C86516E00D5436D /* SevenYears.swift */,
 				108F22AF1C8D09E800129E43 /* OneMinute.swift */,
-				10FD329E1C9A4DAD00C89669 /* FSDate.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -302,6 +318,7 @@
 		10F082F21C5D8449006C9BD1 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				10FD32A01C9AB63300C89669 /* MMDrawerController */,
 				10F981741C8C32EF00ECF5AC /* FSCalendar */,
 				103ADCE21C86527F00D5436D /* SwiftDate */,
 				10CB79CB1C882C5F00654FF3 /* PITouchIDManager.swift */,
@@ -345,6 +362,22 @@
 				10F981921C8C32EF00ECF5AC /* UIView+FSExtension.m */,
 			);
 			path = FSCalendar;
+			sourceTree = "<group>";
+		};
+		10FD32A01C9AB63300C89669 /* MMDrawerController */ = {
+			isa = PBXGroup;
+			children = (
+				10FD32A11C9AB63300C89669 /* MMDrawerBarButtonItem.h */,
+				10FD32A21C9AB63300C89669 /* MMDrawerBarButtonItem.m */,
+				10FD32A31C9AB63300C89669 /* MMDrawerController+Subclass.h */,
+				10FD32A41C9AB63300C89669 /* MMDrawerController.h */,
+				10FD32A51C9AB63300C89669 /* MMDrawerController.m */,
+				10FD32A61C9AB63300C89669 /* MMDrawerVisualState.h */,
+				10FD32A71C9AB63300C89669 /* MMDrawerVisualState.m */,
+				10FD32A81C9AB63300C89669 /* UIViewController+MMDrawerController.h */,
+				10FD32A91C9AB63300C89669 /* UIViewController+MMDrawerController.m */,
+			);
+			path = MMDrawerController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -418,7 +451,7 @@
 						DevelopmentTeam = W8Z5PW2FDD;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -489,6 +522,8 @@
 				103ADD071C86527F00D5436D /* NSTimeZone+SwiftDate.swift in Sources */,
 				103ADCFC1C86527F00D5436D /* DateInRegion+Operations.swift in Sources */,
 				103ADCF71C86527F00D5436D /* DateInRegion+Comparisons.swift in Sources */,
+				10FD32B91C9AC58500C89669 /* FSDate.swift in Sources */,
+				10B63C0A1C9B668F0014BDAB /* FSDate+CoreDataProperties.swift in Sources */,
 				103ADD001C86527F00D5436D /* NSCalendar+SwiftDate.swift in Sources */,
 				103ADCFD1C86527F00D5436D /* DateInRegion+StartEnd.swift in Sources */,
 				103ADCFB1C86527F00D5436D /* DateInRegion+NSDatePort.swift in Sources */,
@@ -502,6 +537,7 @@
 				10CB7A011C8909C000654FF3 /* CalendarViewController.swift in Sources */,
 				10F981A01C8C32EF00ECF5AC /* NSString+FSExtension.m in Sources */,
 				103ADCF91C86527F00D5436D /* DateInRegion+Equations.swift in Sources */,
+				10FD32AB1C9AB63300C89669 /* MMDrawerController.m in Sources */,
 				103ADD081C86527F00D5436D /* Region.swift in Sources */,
 				103ADD021C86527F00D5436D /* NSDateComponents+SwiftDate.swift in Sources */,
 				103ADD041C86527F00D5436D /* NSDateInterval.swift in Sources */,
@@ -516,16 +552,18 @@
 				103ADD061C86527F00D5436D /* NSTimeInterval+SwiftDate.swift in Sources */,
 				103ADCE11C86516E00D5436D /* SevenYears.swift in Sources */,
 				103DCEF91C82C41D00197818 /* OneMinuteButton.swift in Sources */,
-				10FD329F1C9A4DAD00C89669 /* FSDate.swift in Sources */,
 				10F9819C1C8C32EF00ECF5AC /* FSCalendarHeader.m in Sources */,
 				103ADCFF1C86527F00D5436D /* Dictionary+SwiftDate.swift in Sources */,
 				10F981941C8C32EF00ECF5AC /* FSCalendar+IBExtension.m in Sources */,
+				10FD32AD1C9AB63300C89669 /* UIViewController+MMDrawerController.m in Sources */,
+				10FD32AA1C9AB63300C89669 /* MMDrawerBarButtonItem.m in Sources */,
 				10F9819D1C8C32EF00ECF5AC /* FSCalendarStickyHeader.m in Sources */,
 				10F981981C8C32EF00ECF5AC /* FSCalendarCollectionView.m in Sources */,
 				10CB79CC1C882C5F00654FF3 /* PITouchIDManager.swift in Sources */,
 				10B5D0981C80FEBB00122044 /* OneMinuteView.swift in Sources */,
 				10F082C21C5D83A2006C9BD1 /* AppDelegate.swift in Sources */,
 				10CB79CE1C88307800654FF3 /* TouchIDAuthViewController.swift in Sources */,
+				10FD32AC1C9AB63300C89669 /* MMDrawerVisualState.m in Sources */,
 				103ADD031C86527F00D5436D /* NSDateFormatter+SwiftDate.swift in Sources */,
 				10F981951C8C32EF00ECF5AC /* FSCalendar.m in Sources */,
 				10F9819B1C8C32EF00ECF5AC /* FSCalendarFlowLayout.m in Sources */,
@@ -679,7 +717,7 @@
 					"$(PROJECT_DIR)/OneMinute/ThirdParty",
 				);
 				INFOPLIST_FILE = OneMinute/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zwq.OneMinute;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -695,7 +733,7 @@
 					"$(PROJECT_DIR)/OneMinute/ThirdParty",
 				);
 				INFOPLIST_FILE = OneMinute/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zwq.OneMinute;
 				PRODUCT_NAME = "$(TARGET_NAME)";

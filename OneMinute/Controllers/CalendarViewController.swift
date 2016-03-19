@@ -7,25 +7,38 @@
 //
 
 import UIKit
+import CoreData
 
 class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate {
     
     @IBOutlet weak var calendar: FSCalendar!
     @IBOutlet weak var calendarHeightConstraint: NSLayoutConstraint!
-
     @IBOutlet weak var eventTableView: CalendarTableView!
     
-    let fsDate = FSDate()
-    var fsDates = [FSDate]()
+    lazy var managedContext: NSManagedObjectContext = {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext =  appDelegate.managedObjectContext
+        return managedContext
+    }()
+    
+    lazy var fsDate: FSDate = {
+        return NSEntityDescription.insertNewObjectForEntityForName("FSDate", inManagedObjectContext: self.managedContext) as! FSDate
+    }()
+    
+    var fsDates: [FSDate]!
+    var daysOfFSDates: [NSTimeInterval]!
     var oneMinute: OneMinute = OneMinute()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        eventTableView.backgroundColor = UIColor.lightGrayColor()
         self.configureNavigationBar()
         calendar.scrollDirection = .Horizontal
         calendar.appearance.caseOptions = [.HeaderUsesUpperCase,.WeekdayUsesUpperCase]
+        loadDates()
+        self.fsDate.date = self.calendar.today.timeIntervalSinceReferenceDate
     }
+    
+    
     
     func configureNavigationBar() {
         self.navigationController!.navigationBar.barStyle = .Black
@@ -48,11 +61,10 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
     
     func calendar(calendar: FSCalendar!, numberOfEventsForDate date: NSDate!) -> Int {
 
-        if calendar.dayOfDate(date) == fsDate.dayOfDate() {
-            return fsDate.numberOfEvents
+        guard let idx = daysOfFSDates.indexOf(date.timeIntervalSinceReferenceDate) else {
+            return 0
         }
-        
-        return 0
+            return Int(fsDates[idx].numberOfEvents)
     }
     
     func calendarCurrentPageDidChange(calendar: FSCalendar!) {
@@ -60,8 +72,18 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
     }
     
     func calendar(calendar: FSCalendar!, didSelectDate date: NSDate!) {
+        
+        guard let idx = daysOfFSDates.indexOf(date.timeIntervalSinceReferenceDate) else {
+        
+        fsDate = NSEntityDescription.insertNewObjectForEntityForName("FSDate", inManagedObjectContext: self.managedContext) as! FSDate
+            self.fsDate.date = date.timeIntervalSinceReferenceDate
+            print("new")
+            return
+        }
+        
+        fsDate = fsDates[idx]
+        
         NSLog("calendar did select date \(calendar.stringFromDate(date))")
-        print(date)
     }
     
     func calendarCurrentScopeWillChange(calendar: FSCalendar!, animated: Bool) {
@@ -113,7 +135,9 @@ extension CalendarViewController: UITableViewDataSource, UITableViewDelegate {
         default:
             fsDate.numberOfEvents--
         }
-
+        
+        saveDate()
+        loadDates()
         calendar.reloadData()
     }
     
@@ -123,13 +147,46 @@ extension CalendarViewController: FSCalendarDelegateAppearance {
     
     func calendar(calendar: FSCalendar!, appearance: FSCalendarAppearance!, borderDefaultColorForDate date: NSDate!) -> UIColor! {
         
-        guard calendar.dayOfDate(date) == fsDate.dayOfDate() && fsDate.hasCircle == true else {
+        guard let idx = daysOfFSDates.indexOf(date.timeIntervalSinceReferenceDate) else {
             return appearance.borderDefaultColor
         }
         
-        return UIColor.greenColor()
+        return fsDates[idx].hasCircle ? UIColor.greenColor() : appearance.borderDefaultColor
     }
 }
+
+// MARK: CoreData
+extension CalendarViewController {
+    
+    func loadFsDatesOfMonth() {
+        //        fsDatesFetch.predicate = NSPredicate(format: String, args: CVarArgType...)
+    }
+    
+    func loadDates() {
+        let fsDatesFetch = NSFetchRequest(entityName: "FSDate")
+        do {
+            let results = try managedContext.executeFetchRequest(fsDatesFetch)
+            fsDates = results as! [FSDate]
+            daysOfFSDates = fsDates.map{$0.date}
+        } catch {
+            fatalError("fetch fsDates err")
+        }
+    }
+    
+    func saveDate() {
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not save:\(error)")
+        }
+    }
+}
+
+
+
+
+
+
 
 
 

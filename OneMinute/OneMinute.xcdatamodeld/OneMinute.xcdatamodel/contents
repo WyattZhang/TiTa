@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15C50" minimumToolsVersion="Automatic">
-    <entity name="Entity" syncable="YES">
-        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+    <entity name="FSDate" representedClassName=".FSDate" syncable="YES">
+        <attribute name="date" attributeType="Date" defaultDateTimeInterval="479943780" syncable="YES"/>
+        <attribute name="hasCircle" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="numberOfEvents" attributeType="Integer 16" minValueString="0" maxValueString="3" defaultValueString="0.0" syncable="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="date"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <elements>
-        <element name="Entity" positionX="-63" positionY="-18" width="128" height="60"/>
+        <element name="FSDate" positionX="-54" positionY="-9" width="128" height="90"/>
     </elements>
 </model>

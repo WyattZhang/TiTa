@@ -6,15 +6,17 @@
 //  Copyright © 2016年 zwq. All rights reserved.
 //
 
-import UIKit
+import Foundation
+import CoreData
 
-class FSDate: NSObject {
-    
-    var date: NSDate = NSDate()
-    var hasCircle: Bool = false
-    var numberOfEvents: Int = 0
-    
-    func dayOfDate() -> Int {
-        return self.date.day
+
+class FSDate: NSManagedObject {
+
+// Insert code here to add functionality to your managed object subclass
+
+    func dayOfDate() -> NSInteger {
+        let date = NSDate(timeIntervalSinceReferenceDate: self.date)
+        return date.day
     }
+    
 }
