@@ -11,6 +11,10 @@
 
 import UIKit
 
+protocol OneMinuteViewControllerDelegate: class {
+    func oneMinuteViewController(viewController: OneMinuteViewController, didFinishTiming oneMinute: OneMinute)
+}
+
 class OneMinuteViewController: UIViewController {
     
     var timer: NSTimer?
@@ -18,8 +22,10 @@ class OneMinuteViewController: UIViewController {
     var immersionCP: KYCircularProgress!
     var pomodoroCP: KYCircularProgress!
     var starBadgeCP: KYCircularProgress!
-    var startTime: NSTimeInterval!
+    var oneMinute: OneMinute = OneMinute()
     var isRunning: Bool = false
+    
+    weak var delegate: OneMinuteViewControllerDelegate?
     
     @IBOutlet weak var starBadge: UIView!
     @IBOutlet weak var oneMinuteCP: KYCircularProgress!
@@ -42,6 +48,7 @@ class OneMinuteViewController: UIViewController {
         configureImmersionCP()
         configurePomodoroCP()
         configureStarBadge()
+        print(self.presentingViewController)
         }
     
     
@@ -63,7 +70,7 @@ class OneMinuteViewController: UIViewController {
     
     func update() {
         
-        let ti: NSTimeInterval = NSDate.timeIntervalSinceReferenceDate() - startTime
+        let ti: NSTimeInterval = NSDate.timeIntervalSinceReferenceDate() - oneMinute.startTime
         let elapsedTime = UInt(ti)
         let hours = UInt((ti / 60.0) / 60.0)
         let minutes = UInt((ti - NSTimeInterval(hours) * 60.0 * 60.0) / 60.0)
@@ -163,20 +170,24 @@ extension OneMinuteViewController {
     
     @IBAction func oneMinuteClicked(sender: AnyObject) {
         
-        if !isRunning {
+        if !isRunning && oneMinuteBtn.titleLabel!.text != "Dismiss" {
             UIApplication.sharedApplication().idleTimerDisabled = true
-            startTime = NSDate.timeIntervalSinceReferenceDate()
+            oneMinute.startTime = NSDate.timeIntervalSinceReferenceDate()
             timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector:"update", userInfo: nil, repeats: true)
             NSRunLoop.mainRunLoop().addTimer(timer!, forMode: NSRunLoopCommonModes)
             navigationItem.rightBarButtonItem = nil
             goalLabel.hidden = false
             oneMinuteBtn.hidden = true
             self.isRunning = true
-        } else {
+        } else if timer != nil {
             timer!.invalidate()
             timer = nil
             self.isRunning = false
+            oneMinute.finishTime = NSDate.timeIntervalSinceReferenceDate()
             oneMinuteBtn.setTitle("Dismiss", forState: .Normal)
+        } else {
+            self.delegate!.oneMinuteViewController(self, didFinishTiming: oneMinute)
+            self.navigationController!.popToRootViewControllerAnimated(true)
         }
     }
         

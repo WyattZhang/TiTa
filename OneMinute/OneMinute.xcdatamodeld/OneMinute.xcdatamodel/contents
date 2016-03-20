@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15C50" minimumToolsVersion="Automatic">
+    <entity name="FSDate" representedClassName=".FSDate" syncable="YES">
+        <attribute name="date" attributeType="Date" indexed="YES" syncable="YES"/>
+        <attribute name="hasCircle" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="numberOfEvents" attributeType="Integer 16" minValueString="0" maxValueString="3" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="subtitleChar1" attributeType="String" defaultValueString=" " syncable="YES"/>
+        <attribute name="subtitleChar2" attributeType="String" defaultValueString=" " syncable="YES"/>
+        <attribute name="subtitleChar3" attributeType="String" defaultValueString=" " syncable="YES"/>
+        <attribute name="subtitleChar4" attributeType="String" defaultValueString=" " syncable="YES"/>
+        <attribute name="subtitleChar5" attributeType="String" defaultValueString=" " syncable="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="date"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <elements>
+        <element name="FSDate" positionX="-54" positionY="-9" width="128" height="165"/>
+    </elements>
 </model>
