@@ -45,6 +45,7 @@
 		10F082CF1C5D83A2006C9BD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10F082CD1C5D83A2006C9BD1 /* LaunchScreen.storyboard */; };
 		10F082DA1C5D83A2006C9BD1 /* OneMinuteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F082D91C5D83A2006C9BD1 /* OneMinuteTests.swift */; };
 		10F082E51C5D83A2006C9BD1 /* OneMinuteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F082E41C5D83A2006C9BD1 /* OneMinuteUITests.swift */; };
+		10F16CDD1C9E7983007E7855 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10F16CDC1C9E7983007E7855 /* Images.xcassets */; };
 		10F981931C8C32EF00ECF5AC /* CALayer+FSExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F981761C8C32EF00ECF5AC /* CALayer+FSExtension.m */; };
 		10F981941C8C32EF00ECF5AC /* FSCalendar+IBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F981781C8C32EF00ECF5AC /* FSCalendar+IBExtension.m */; };
 		10F981951C8C32EF00ECF5AC /* FSCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F9817A1C8C32EF00ECF5AC /* FSCalendar.m */; };
@@ -131,6 +132,7 @@
 		10F082E01C5D83A2006C9BD1 /* OneMinuteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OneMinuteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		10F082E41C5D83A2006C9BD1 /* OneMinuteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneMinuteUITests.swift; sourceTree = "<group>"; };
 		10F082E61C5D83A3006C9BD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10F16CDC1C9E7983007E7855 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		10F981751C8C32EF00ECF5AC /* CALayer+FSExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+FSExtension.h"; sourceTree = "<group>"; };
 		10F981761C8C32EF00ECF5AC /* CALayer+FSExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+FSExtension.m"; sourceTree = "<group>"; };
 		10F981771C8C32EF00ECF5AC /* FSCalendar+IBExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FSCalendar+IBExtension.h"; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 				10CB79FD1C89067500654FF3 /* OneMinute-Bridging-Header.h */,
 				10F082C81C5D83A2006C9BD1 /* OneMinute.xcdatamodeld */,
 				10CB79C91C87F12400654FF3 /* LocalAuthentication.framework */,
+				10F16CDC1C9E7983007E7855 /* Images.xcassets */,
 			);
 			path = OneMinute;
 			sourceTree = "<group>";
@@ -493,6 +496,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				10F082CF1C5D83A2006C9BD1 /* LaunchScreen.storyboard in Resources */,
+				10F16CDD1C9E7983007E7855 /* Images.xcassets in Resources */,
 				10F082C71C5D83A2006C9BD1 /* Main.storyboard in Resources */,
 				10F9819E1C8C32EF00ECF5AC /* Info.plist in Resources */,
 			);
@@ -662,7 +666,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -701,7 +705,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "OneMinute/OneMinute-Bridging-Header.h";
@@ -712,6 +716,7 @@
 		10F082EA1C5D83A3006C9BD1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/OneMinute/ThirdParty",
@@ -728,6 +733,7 @@
 		10F082EB1C5D83A3006C9BD1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/OneMinute/ThirdParty",
