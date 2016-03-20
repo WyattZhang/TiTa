@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate {
+class CalendarViewController: UIViewController {
     
     @IBOutlet weak var calendar: FSCalendar!
     @IBOutlet weak var calendarHeightConstraint: NSLayoutConstraint!
@@ -32,13 +32,37 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureNavigationBar()
-        calendar.scrollDirection = .Horizontal
-        calendar.appearance.caseOptions = [.HeaderUsesUpperCase,.WeekdayUsesUpperCase]
+        self.configureCalendarApperance()
         loadDates()
-        self.fsDate.date = self.calendar.today.timeIntervalSinceReferenceDate
+        self.configureToday()
+        print("viewdid-dates",fsDates)
+        print("VD-date",fsDate)
+
     }
     
+    func configureCalendarApperance() {
+        calendar.scrollDirection = .Horizontal
+        calendar.appearance.cellShape = .Rectangle
+        calendar.appearance.caseOptions = [.HeaderUsesDefaultCase,.WeekdayUsesDefaultCase]
+    }
     
+    func configureToday() {
+        self.calendar.selectDate(self.calendar.today)
+        let fetchRequest = NSFetchRequest(entityName: "FSDate")
+        fetchRequest.predicate = NSPredicate(format: "date == %@", self.calendar.today)
+        
+        do {
+            let results = try managedContext.executeFetchRequest(fetchRequest) as! [FSDate]
+            if results.first != nil {
+                fsDate = results.first!
+            } else {
+                fsDate = NSEntityDescription.insertNewObjectForEntityForName("FSDate", inManagedObjectContext: self.managedContext) as! FSDate
+                fsDate.date = self.calendar.today.timeIntervalSinceReferenceDate
+            }
+        } catch let err as NSError {
+            print("Error: \(err) " + "description \(err.localizedDescription)")
+        }
+    }
     
     func configureNavigationBar() {
         self.navigationController!.navigationBar.barStyle = .Black
@@ -59,23 +83,25 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
         self.navigationController!.pushViewController(oneMinuteVC, animated: true)
     }
     
-    func calendar(calendar: FSCalendar!, numberOfEventsForDate date: NSDate!) -> Int {
+}
 
+// MARK: - FSCalendarDataSource FSCalendarDelegate
+
+extension CalendarViewController: FSCalendarDataSource, FSCalendarDelegate {
+    
+    func calendar(calendar: FSCalendar!, numberOfEventsForDate date: NSDate!) -> Int {
+        
         guard let idx = daysOfFSDates.indexOf(date.timeIntervalSinceReferenceDate) else {
             return 0
         }
-            return Int(fsDates[idx].numberOfEvents)
-    }
-    
-    func calendarCurrentPageDidChange(calendar: FSCalendar!) {
-        NSLog("change page to \(calendar.stringFromDate(calendar.currentPage))")
+        return Int(fsDates[idx].numberOfEvents)
     }
     
     func calendar(calendar: FSCalendar!, didSelectDate date: NSDate!) {
         
         guard let idx = daysOfFSDates.indexOf(date.timeIntervalSinceReferenceDate) else {
-        
-        fsDate = NSEntityDescription.insertNewObjectForEntityForName("FSDate", inManagedObjectContext: self.managedContext) as! FSDate
+            
+            fsDate = NSEntityDescription.insertNewObjectForEntityForName("FSDate", inManagedObjectContext: self.managedContext) as! FSDate
             self.fsDate.date = date.timeIntervalSinceReferenceDate
             print("new")
             return
@@ -86,9 +112,32 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
         NSLog("calendar did select date \(calendar.stringFromDate(date))")
     }
     
-    func calendarCurrentScopeWillChange(calendar: FSCalendar!, animated: Bool) {
-        calendarHeightConstraint.constant = calendar.sizeThatFits(CGSizeZero).height
-        view.layoutIfNeeded()
+    func calendar(calendar: FSCalendar!, subtitleForDate date: NSDate!) -> String {
+        return "ABCD"
+    }
+    
+}
+
+// MARK: - FSCalendarDelegateAppearance
+
+extension CalendarViewController: FSCalendarDelegateAppearance {
+    
+    func calendar(calendar: FSCalendar!, appearance: FSCalendarAppearance!, borderDefaultColorForDate date: NSDate!) -> UIColor! {
+        
+        guard let idx = daysOfFSDates.indexOf(date.timeIntervalSinceReferenceDate) else {
+            return appearance.borderDefaultColor
+        }
+        
+        return fsDates[idx].hasCircle ? UIColor(rgba: 0x35839DAA) : appearance.borderDefaultColor
+    }
+    
+    func calendar(calendar: FSCalendar!, appearance: FSCalendarAppearance!, borderSelectionColorForDate date: NSDate!) -> UIColor! {
+        
+        guard let idx = daysOfFSDates.indexOf(date.timeIntervalSinceReferenceDate) else {
+            return appearance.borderDefaultColor
+        }
+        
+        return fsDates[idx].hasCircle ? UIColor.lightGrayColor() : appearance.borderDefaultColor
     }
 }
 
@@ -98,6 +147,8 @@ extension CalendarViewController: OneMinuteViewControllerDelegate {
         eventTableView.reloadData()
     }
 }
+
+// MARK: - TableVeiw Delegate
 
 extension CalendarViewController: UITableViewDataSource, UITableViewDelegate {
     
@@ -131,31 +182,28 @@ extension CalendarViewController: UITableViewDataSource, UITableViewDelegate {
         case 1:
             fsDate.hasCircle = false
         case 2:
+            if fsDate.numberOfEvents == 3 {
+                return
+            }
             fsDate.numberOfEvents++
         default:
+            if fsDate.numberOfEvents == 0 {
+                return
+            }
             fsDate.numberOfEvents--
         }
         
-        saveDate()
+        updateDate()
         loadDates()
         calendar.reloadData()
+        
+        print("didsele dates",fsDates)
+        print("didsele date",fsDate)
     }
     
 }
 
-extension CalendarViewController: FSCalendarDelegateAppearance {
-    
-    func calendar(calendar: FSCalendar!, appearance: FSCalendarAppearance!, borderDefaultColorForDate date: NSDate!) -> UIColor! {
-        
-        guard let idx = daysOfFSDates.indexOf(date.timeIntervalSinceReferenceDate) else {
-            return appearance.borderDefaultColor
-        }
-        
-        return fsDates[idx].hasCircle ? UIColor.greenColor() : appearance.borderDefaultColor
-    }
-}
-
-// MARK: CoreData
+// MARK: - CoreData
 extension CalendarViewController {
     
     func loadFsDatesOfMonth() {
@@ -173,13 +221,23 @@ extension CalendarViewController {
         }
     }
     
-    func saveDate() {
+    func updateDate() {
+        
+//        deleteFsDateIfNeeded()
+        
         do {
             try managedContext.save()
         } catch let error as NSError {
             print("Could not save:\(error)")
         }
     }
+    
+    func deleteFsDateIfNeeded() {
+        if fsDate.hasCircle == false && fsDate.numberOfEvents == 0 {
+            managedContext.deleteObject(fsDate)
+        }
+    }
+    
 }
 
 

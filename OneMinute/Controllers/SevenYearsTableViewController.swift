@@ -107,8 +107,8 @@ extension SevenYearsTableViewController {
     
     func configureSevenYearsList() {
         
-        beginDate.birthYear = 1987
-        beginDate.year = 2005
+        beginDate.birthYear = 1984
+        beginDate.year = 2002
         beginDate.month = 07
         beginDate.day = 04
         beginDate.hour = 24
