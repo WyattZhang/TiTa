@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1sk-YG-H2v">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2ht-8C-6Ql">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
@@ -123,24 +123,6 @@
             </objects>
             <point key="canvasLocation" x="834" y="241"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Gac-mI-sDY">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Aj8-uQ-20F" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0BN-Nr-Qef">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="w89-Ag-2D1"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Kpk-h6-9QY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="22" y="241"/>
-        </scene>
         <!--Lives in life-->
         <scene sceneID="12p-bl-kOq">
             <objects>
@@ -151,7 +133,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SevenYearsTableViewCell" rowHeight="110" id="8xg-Eq-04S" customClass="SevenYearsTableViewCell" customModule="OneMinute" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="110"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="110"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8xg-Eq-04S" id="plV-yA-JaG">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="109"/>
@@ -300,12 +282,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J7I-QK-rZ2" customClass="FSCalendar">
-                                <rect key="frame" x="0.0" y="64" width="600" height="600"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J7I-QK-rZ2" customClass="FSCalendar">
+                                <rect key="frame" x="0.0" y="64" width="600" height="400"/>
                                 <color key="backgroundColor" red="0.12941176470588234" green="0.15686274509803921" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="496" id="5Mz-0M-BmV"/>
+                                    <constraint firstAttribute="height" constant="400" id="5Mz-0M-BmV"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="weekdayTextColor">
@@ -355,8 +337,8 @@
                                     <outlet property="delegate" destination="MiB-09-r5R" id="ldv-76-f1i"/>
                                 </connections>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ehy-Jr-0Vf" customClass="CalendarTableView" customModule="OneMinute" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="502" width="600" height="98"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ehy-Jr-0Vf" customClass="CalendarTableView" customModule="OneMinute" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="464" width="600" height="136"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="aab-pU-H1Y" style="IBUITableViewCellStyleDefault" id="cU5-hk-Ue0">
@@ -404,47 +386,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yPa-vo-kgP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="3261" y="226"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tnQ-a9-nLD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2ht-8C-6Ql" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Di4-OP-NKh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="MiB-09-r5R" kind="relationship" relationship="rootViewController" id="AU1-1M-iBg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kZM-9r-DN6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="2449" y="226"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="qP2-so-1EM">
-            <objects>
-                <navigationController id="9Lg-Vb-Ecw" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Iau-Fo-EGq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="KAV-cx-Akm">
-                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
-                    <connections>
-                        <segue destination="EPl-GB-z1G" kind="relationship" relationship="rootViewController" id="fur-dN-xi2"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="t8h-AE-4Yv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-13" y="1140"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Izt-Z6-2uH">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1sk-YG-H2v" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tlm-gU-xN1">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="MiB-09-r5R" kind="relationship" relationship="rootViewController" id="PAW-bf-TMH"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fsb-T5-Hl1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1637" y="226"/>
         </scene>
     </scenes>
 </document>

@@ -34,7 +34,6 @@
 		108F22B01C8D09E800129E43 /* OneMinute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108F22AF1C8D09E800129E43 /* OneMinute.swift */; };
 		10B5D0901C8034E000122044 /* KYCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B5D08F1C8034E000122044 /* KYCircularProgress.swift */; };
 		10B5D0981C80FEBB00122044 /* OneMinuteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B5D0971C80FEBB00122044 /* OneMinuteView.swift */; };
-		10B63C0A1C9B668F0014BDAB /* FSDate+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B63C091C9B668F0014BDAB /* FSDate+CoreDataProperties.swift */; };
 		10CB79CA1C87F12400654FF3 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10CB79C91C87F12400654FF3 /* LocalAuthentication.framework */; };
 		10CB79CC1C882C5F00654FF3 /* PITouchIDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB79CB1C882C5F00654FF3 /* PITouchIDManager.swift */; };
 		10CB79CE1C88307800654FF3 /* TouchIDAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB79CD1C88307800654FF3 /* TouchIDAuthViewController.swift */; };
@@ -46,6 +45,7 @@
 		10F082DA1C5D83A2006C9BD1 /* OneMinuteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F082D91C5D83A2006C9BD1 /* OneMinuteTests.swift */; };
 		10F082E51C5D83A2006C9BD1 /* OneMinuteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F082E41C5D83A2006C9BD1 /* OneMinuteUITests.swift */; };
 		10F16CDD1C9E7983007E7855 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10F16CDC1C9E7983007E7855 /* Images.xcassets */; };
+		10F16CE31C9F4935007E7855 /* FSDate+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F16CE21C9F4935007E7855 /* FSDate+CoreDataProperties.swift */; };
 		10F981931C8C32EF00ECF5AC /* CALayer+FSExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F981761C8C32EF00ECF5AC /* CALayer+FSExtension.m */; };
 		10F981941C8C32EF00ECF5AC /* FSCalendar+IBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F981781C8C32EF00ECF5AC /* FSCalendar+IBExtension.m */; };
 		10F981951C8C32EF00ECF5AC /* FSCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F9817A1C8C32EF00ECF5AC /* FSCalendar.m */; };
@@ -114,7 +114,6 @@
 		108F22AF1C8D09E800129E43 /* OneMinute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneMinute.swift; sourceTree = "<group>"; };
 		10B5D08F1C8034E000122044 /* KYCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYCircularProgress.swift; sourceTree = "<group>"; };
 		10B5D0971C80FEBB00122044 /* OneMinuteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneMinuteView.swift; sourceTree = "<group>"; };
-		10B63C091C9B668F0014BDAB /* FSDate+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FSDate+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		10CB79C91C87F12400654FF3 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		10CB79CB1C882C5F00654FF3 /* PITouchIDManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PITouchIDManager.swift; sourceTree = "<group>"; };
 		10CB79CD1C88307800654FF3 /* TouchIDAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchIDAuthViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +132,7 @@
 		10F082E41C5D83A2006C9BD1 /* OneMinuteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneMinuteUITests.swift; sourceTree = "<group>"; };
 		10F082E61C5D83A3006C9BD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10F16CDC1C9E7983007E7855 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		10F16CE21C9F4935007E7855 /* FSDate+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FSDate+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		10F981751C8C32EF00ECF5AC /* CALayer+FSExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+FSExtension.h"; sourceTree = "<group>"; };
 		10F981761C8C32EF00ECF5AC /* CALayer+FSExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+FSExtension.m"; sourceTree = "<group>"; };
 		10F981771C8C32EF00ECF5AC /* FSCalendar+IBExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FSCalendar+IBExtension.h"; sourceTree = "<group>"; };
@@ -205,7 +205,7 @@
 		1018A5EF1C7E9770006F6AB0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				10B63C091C9B668F0014BDAB /* FSDate+CoreDataProperties.swift */,
+				10F16CE21C9F4935007E7855 /* FSDate+CoreDataProperties.swift */,
 				10FD32B71C9AC58500C89669 /* FSDate.swift */,
 				103ADCE01C86516E00D5436D /* SevenYears.swift */,
 				108F22AF1C8D09E800129E43 /* OneMinute.swift */,
@@ -527,7 +527,7 @@
 				103ADCFC1C86527F00D5436D /* DateInRegion+Operations.swift in Sources */,
 				103ADCF71C86527F00D5436D /* DateInRegion+Comparisons.swift in Sources */,
 				10FD32B91C9AC58500C89669 /* FSDate.swift in Sources */,
-				10B63C0A1C9B668F0014BDAB /* FSDate+CoreDataProperties.swift in Sources */,
+				10F16CE31C9F4935007E7855 /* FSDate+CoreDataProperties.swift in Sources */,
 				103ADD001C86527F00D5436D /* NSCalendar+SwiftDate.swift in Sources */,
 				103ADCFD1C86527F00D5436D /* DateInRegion+StartEnd.swift in Sources */,
 				103ADCFB1C86527F00D5436D /* DateInRegion+NSDatePort.swift in Sources */,

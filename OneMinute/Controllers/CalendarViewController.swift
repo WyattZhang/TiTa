@@ -89,14 +89,6 @@ class CalendarViewController: UIViewController {
 
 extension CalendarViewController: FSCalendarDataSource, FSCalendarDelegate {
     
-    func calendar(calendar: FSCalendar!, numberOfEventsForDate date: NSDate!) -> Int {
-        
-        guard let idx = daysOfFSDates.indexOf(date.timeIntervalSinceReferenceDate) else {
-            return 0
-        }
-        return Int(fsDates[idx].numberOfEvents)
-    }
-    
     func calendar(calendar: FSCalendar!, didSelectDate date: NSDate!) {
         
         guard let idx = daysOfFSDates.indexOf(date.timeIntervalSinceReferenceDate) else {
@@ -112,10 +104,21 @@ extension CalendarViewController: FSCalendarDataSource, FSCalendarDelegate {
         NSLog("calendar did select date \(calendar.stringFromDate(date))")
     }
     
-    func calendar(calendar: FSCalendar!, subtitleForDate date: NSDate!) -> String {
-        return "ABCD"
+    func calendar(calendar: FSCalendar!, numberOfEventsForDate date: NSDate!) -> Int {
+        
+        guard let idx = daysOfFSDates.indexOf(date.timeIntervalSinceReferenceDate) else {
+            return 0
+        }
+        return Int(fsDates[idx].numberOfEvents)
     }
     
+    func calendar(calendar: FSCalendar!, subtitleForDate date: NSDate!) -> String {
+        guard let idx = daysOfFSDates.indexOf(date.timeIntervalSinceReferenceDate) else {
+            return ""
+        }
+ 
+        return fsDates[idx].subtitleChar1 + fsDates[idx].subtitleChar2 + fsDates[idx].subtitleChar3 + fsDates[idx].subtitleChar4 + fsDates[idx].subtitleChar5
+    }
 }
 
 // MARK: - FSCalendarDelegateAppearance
@@ -153,7 +156,7 @@ extension CalendarViewController: OneMinuteViewControllerDelegate {
 extension CalendarViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 6
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -161,13 +164,19 @@ extension CalendarViewController: UITableViewDataSource, UITableViewDelegate {
         
         switch indexPath.row {
         case 0:
-            cell.textLabel!.text = " + Circle"
+            cell.textLabel!.text = "Circle"
         case 1:
-            cell.textLabel!.text = " - Circle"
-        case 2:
             cell.textLabel!.text = " + Event"
-        default:
+        case 2:
             cell.textLabel!.text = " - Event"
+        case 3:
+            cell.textLabel!.text = " W Mark"
+        case 4:
+            cell.textLabel!.text = " R Mark"
+        case 5:
+            cell.textLabel!.text = " S Mark"
+        default:
+            break
         }
 
         return cell
@@ -178,19 +187,25 @@ extension CalendarViewController: UITableViewDataSource, UITableViewDelegate {
         
         switch indexPath.row {
         case 0:
-            fsDate.hasCircle = true
+            fsDate.hasCircle = !fsDate.hasCircle
         case 1:
-            fsDate.hasCircle = false
-        case 2:
             if fsDate.numberOfEvents == 3 {
                 return
             }
             fsDate.numberOfEvents++
-        default:
+        case 2:
             if fsDate.numberOfEvents == 0 {
                 return
             }
             fsDate.numberOfEvents--
+        case 3:
+            markSubtitle(&fsDate.subtitleChar1, withCharacter: "W")
+        case 4:
+            markSubtitle(&fsDate.subtitleChar4, withCharacter: "R")
+        case 5:
+            markSubtitle(&fsDate.subtitleChar5, withCharacter: "S")
+        default:
+            break
         }
         
         updateDate()
@@ -222,9 +237,7 @@ extension CalendarViewController {
     }
     
     func updateDate() {
-        
-//        deleteFsDateIfNeeded()
-        
+                
         do {
             try managedContext.save()
         } catch let error as NSError {
@@ -232,12 +245,15 @@ extension CalendarViewController {
         }
     }
     
-    func deleteFsDateIfNeeded() {
-        if fsDate.hasCircle == false && fsDate.numberOfEvents == 0 {
-            managedContext.deleteObject(fsDate)
+    func markSubtitle(inout subtitle: String, withCharacter char: String) {
+        
+        if subtitle == " " {
+            subtitle = char
+        } else {
+            subtitle = " "
         }
     }
-    
+
 }
 
 
