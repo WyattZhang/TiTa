@@ -119,7 +119,7 @@
 		10CB79CD1C88307800654FF3 /* TouchIDAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchIDAuthViewController.swift; sourceTree = "<group>"; };
 		10CB79FD1C89067500654FF3 /* OneMinute-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OneMinute-Bridging-Header.h"; sourceTree = "<group>"; };
 		10CB7A001C8909C000654FF3 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
-		10F082BE1C5D83A2006C9BD1 /* OneMinute.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneMinute.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		10F082BE1C5D83A2006C9BD1 /* Ti Da.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ti Da.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		10F082C11C5D83A2006C9BD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10F082C61C5D83A2006C9BD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		10F082C91C5D83A2006C9BD1 /* OneMinute.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OneMinute.xcdatamodel; sourceTree = "<group>"; };
@@ -274,7 +274,7 @@
 		10F082BF1C5D83A2006C9BD1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				10F082BE1C5D83A2006C9BD1 /* OneMinute.app */,
+				10F082BE1C5D83A2006C9BD1 /* Ti Da.app */,
 				10F082D51C5D83A2006C9BD1 /* OneMinuteTests.xctest */,
 				10F082E01C5D83A2006C9BD1 /* OneMinuteUITests.xctest */,
 			);
@@ -400,7 +400,7 @@
 			);
 			name = OneMinute;
 			productName = OneMinute;
-			productReference = 10F082BE1C5D83A2006C9BD1 /* OneMinute.app */;
+			productReference = 10F082BE1C5D83A2006C9BD1 /* Ti Da.app */;
 			productType = "com.apple.product-type.application";
 		};
 		10F082D41C5D83A2006C9BD1 /* OneMinuteTests */ = {
@@ -725,7 +725,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zwq.OneMinute;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Ti Da";
 				SWIFT_OBJC_BRIDGING_HEADER = "OneMinute/OneMinute-Bridging-Header.h";
 			};
 			name = Debug;
@@ -742,7 +742,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zwq.OneMinute;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Ti Da";
 				SWIFT_OBJC_BRIDGING_HEADER = "OneMinute/OneMinute-Bridging-Header.h";
 			};
 			name = Release;

@@ -33,11 +33,8 @@ class CalendarViewController: UIViewController {
         super.viewDidLoad()
         self.configureNavigationBar()
         self.configureCalendarApperance()
-        loadDates()
+        self.loadFsDatesOfCurrentMonth()
         self.configureToday()
-        print("viewdid-dates",fsDates)
-        print("VD-date",fsDate)
-
     }
     
     func configureCalendarApperance() {
@@ -88,6 +85,11 @@ class CalendarViewController: UIViewController {
 // MARK: - FSCalendarDataSource FSCalendarDelegate
 
 extension CalendarViewController: FSCalendarDataSource, FSCalendarDelegate {
+    
+    func calendarCurrentPageDidChange(calendar: FSCalendar!) {
+        loadFsDatesOfCurrentMonth()
+        self.calendar.reloadData()
+    }
     
     func calendar(calendar: FSCalendar!, didSelectDate date: NSDate!) {
         
@@ -156,7 +158,7 @@ extension CalendarViewController: OneMinuteViewControllerDelegate {
 extension CalendarViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return 7
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -170,11 +172,13 @@ extension CalendarViewController: UITableViewDataSource, UITableViewDelegate {
         case 2:
             cell.textLabel!.text = " - Event"
         case 3:
-            cell.textLabel!.text = " W Mark"
+            cell.textLabel!.text = " Getup Mark"
         case 4:
-            cell.textLabel!.text = " R Mark"
+            cell.textLabel!.text = " Walk Mark"
         case 5:
-            cell.textLabel!.text = " S Mark"
+            cell.textLabel!.text = " Reading Mark"
+        case 6:
+            cell.textLabel!.text = " Sleep Mark"
         default:
             break
         }
@@ -199,17 +203,19 @@ extension CalendarViewController: UITableViewDataSource, UITableViewDelegate {
             }
             fsDate.numberOfEvents--
         case 3:
-            markSubtitle(&fsDate.subtitleChar1, withCharacter: "W")
+            markSubtitle(&fsDate.subtitleChar1, withCharacter: "G")
         case 4:
-            markSubtitle(&fsDate.subtitleChar4, withCharacter: "R")
+            markSubtitle(&fsDate.subtitleChar2, withCharacter: "W")
         case 5:
-            markSubtitle(&fsDate.subtitleChar5, withCharacter: "S")
+            markSubtitle(&fsDate.subtitleChar3, withCharacter: "R")
+        case 6:
+            markSubtitle(&fsDate.subtitleChar4, withCharacter: "S")
         default:
             break
         }
         
         updateDate()
-        loadDates()
+        loadFsDatesOfCurrentMonth()
         calendar.reloadData()
         
         print("didsele dates",fsDates)
@@ -221,19 +227,23 @@ extension CalendarViewController: UITableViewDataSource, UITableViewDelegate {
 // MARK: - CoreData
 extension CalendarViewController {
     
-    func loadFsDatesOfMonth() {
-        //        fsDatesFetch.predicate = NSPredicate(format: String, args: CVarArgType...)
-    }
-    
-    func loadDates() {
-        let fsDatesFetch = NSFetchRequest(entityName: "FSDate")
+    func loadFsDatesOfCurrentMonth() {
+        
+        let fromDate = calendar.beginingOfMonthOfDate(calendar.currentPage)
+        let toDate = calendar.endOfMonthOfDate(calendar.currentPage)
+        
+        let request = NSFetchRequest(entityName: "FSDate")
+        let predicate = NSPredicate(format: "date >= %@ && date <= %@ ", fromDate, toDate);
+        request.predicate = predicate;
+        
         do {
-            let results = try managedContext.executeFetchRequest(fsDatesFetch)
+            let results = try managedContext.executeFetchRequest(request)
             fsDates = results as! [FSDate]
             daysOfFSDates = fsDates.map{$0.date}
         } catch {
             fatalError("fetch fsDates err")
         }
+        print(fsDates.count, fromDate, toDate)
     }
     
     func updateDate() {
